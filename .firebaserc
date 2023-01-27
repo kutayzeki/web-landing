@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "brut-668a1",
+    "prod": "brut-668a1"
+  },
+  "targets": {},
+  "etags": {}
+}
