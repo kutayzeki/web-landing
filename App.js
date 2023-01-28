@@ -11,7 +11,7 @@ import {
   TextInput,
   ActivityIndicator,
 } from "react-native";
-import { SalaryCard } from "./src/components/Card";
+import { SalaryCard } from "./src/components/Card/Card";
 import { Picker } from "@react-native-picker/picker";
 import SearchBar from "./src/components/SearchBar";
 import { IconButton } from "./src/components/Button";
