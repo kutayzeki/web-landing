@@ -1,9 +1,17 @@
 import { useRef, useState } from "react";
-import { View, TextInput, Image, StyleSheet } from "react-native";
+import { View, TextInput, Image, StyleSheet, Dimensions } from "react-native";
 import { IconButton } from "./Button";
 
 const SearchBar = (props) => {
   const [searchText, setSearchText] = useState("");
+
+  const [screenWidth, setScreenWidth] = useState(
+    Dimensions.get("screen").width
+  );
+
+  Dimensions.addEventListener("change", ({ window }) => {
+    setScreenWidth(window.width);
+  });
 
   const clearSearch = () => {
     textInputRef.current.clear();
@@ -21,14 +29,18 @@ const SearchBar = (props) => {
   };
   const textInputRef = useRef(null);
   return (
-    <View style={styles.searchContainer}>
+    <View
+      style={
+        screenWidth > 994 ? styles.searchContainer : styles.smallSearchContainer
+      }
+    >
       <Image
         style={styles.searchIcon}
         source={require("../../assets/magnifying-glass.png")}
       />
       <TextInput
         ref={textInputRef}
-        style={{ ...styles.searchInput, outlineStyle: "none" }}
+        style={screenWidth > 994 ? styles.searchInput : styles.smallSearchInput}
         placeholder="Pozisyon Ara"
         onChangeText={(text) => {
           setSearchText(text);
@@ -55,6 +67,15 @@ const styles = StyleSheet.create({
     borderColor: "#EDEFF2",
     padding: 5,
   },
+  smallSearchContainer: {
+    flexDirection: "row",
+    backgroundColor: "#ffffff",
+    alignItems: "center",
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#EDEFF2",
+    padding: 5,
+  },
   searchIcon: {
     width: 20,
     height: 20,
@@ -64,6 +85,14 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 5,
     color: "#4F5F80",
+    outlineStyle: "none",
+  },
+  smallSearchInput: {
+    flex: 1,
+    maxWidth: 100,
+    padding: 5,
+    color: "#4F5F80",
+    outlineStyle: "none",
   },
   clearButton: {
     position: "absolute",
