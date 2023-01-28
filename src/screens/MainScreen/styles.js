@@ -55,6 +55,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     alignSelf: "flex-start",
     margin: 16,
+    marginTop: 60,
   },
   rightContainer: {
     width: "60%",
