@@ -14,6 +14,8 @@ import useFetch from "../../services/hooks/useFetch";
 import getUniqueID from "../../utils/generateId";
 import { styles } from "./styles";
 import SalaryForm from "../../components/Form";
+import Header from "../../components/Header";
+import { Footer } from "../../components/Footer";
 
 const MainScreen = () => {
   const uniqueID = getUniqueID();
@@ -55,13 +57,7 @@ const MainScreen = () => {
 
   return (
     <View style={styles.main}>
-      <View style={styles.header}>
-        <Image
-          style={styles.image}
-          source={require("../../../assets/logo.png")}
-        />
-      </View>
-
+      <Header />
       {screenWidth > 994 ? (
         <View style={{ ...styles.container, width: screenWidth }}>
           <View style={styles.leftContainer}>
@@ -70,7 +66,7 @@ const MainScreen = () => {
           <View
             style={{
               ...styles.rightContainer,
-              height: Dimensions.get("window").height * 0.9,
+              height: Dimensions.get("window").height * 0.88,
             }}
           >
             <View
@@ -190,6 +186,7 @@ const MainScreen = () => {
           </View>
         </View>
       )}
+      <Footer />
     </View>
   );
 };

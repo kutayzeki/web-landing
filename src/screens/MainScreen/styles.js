@@ -6,17 +6,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.BACKGROUND,
   },
-  header: {
-    backgroundColor: COLORS.PRIMARY100,
-    height: 80,
-    elevation: 1,
-    shadowColor: COLORS.BLACK,
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.18,
-    shadowRadius: 4,
-    justifyContent: "center",
-    alignItems: "baseline",
-  },
+
   container: {
     alignSelf: "center",
     backgroundColor: COLORS.BACKGROUND,
@@ -50,7 +40,7 @@ export const styles = StyleSheet.create({
     maxWidth: 600,
   },
   smallRightContainer: {
-    width: Dimensions.get("window").width * 0.95,
+    width: Dimensions.get("window").width * 0.9,
     borderRadius: 8,
     alignSelf: "center",
     margin: 16,
@@ -74,11 +64,5 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 16,
     color: COLORS.TEXT_DARK,
-  },
-  image: {
-    height: 50,
-    width: 50,
-    marginLeft: 10,
-    resizeMode: "contain",
   },
 });
