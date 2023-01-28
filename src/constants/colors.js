@@ -21,7 +21,7 @@ export const COLORS = {
   GREY_SOFT: "#D3D3D3",
   GREY_DARK: "#696969",
   TEXT_LIGHT: "#f5f5f5",
-  TEXT_DARK: "#212121",
+  TEXT_DARK: "#4F5F80",
   TEXT_PRIMARY: "#6200EE",
   TEXT_SECONDARY: "#03DAC6",
   TEXT_TERTIARY: "#FFC107",
@@ -32,4 +32,5 @@ export const COLORS = {
   NEUTRAL: "#757575",
   LINK: "#3D5AFE",
   DISABLED: "#BDBDBD",
+  BORDER: "#EDEFF2",
 };

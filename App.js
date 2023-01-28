@@ -18,35 +18,10 @@ import { IconButton } from "./src/components/Button";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import useFetch from "./src/services/hooks/useFetch";
 import { COLORS } from "./src/constants/colors";
+import getUniqueID from "./src/utils/generateId";
 
 export default function App() {
-  //#region check Id
-  function getUniqueID() {
-    const existingID = localStorage.getItem("uniqueID");
-    if (existingID) {
-      return existingID;
-    } else {
-      const newID = generateUniqueID();
-      localStorage.setItem("uniqueID", newID);
-      return newID;
-    }
-  }
-  function generateUniqueID() {
-    // Generate a 16-byte array
-    var array = new Uint8Array(16);
-    window.crypto.getRandomValues(array);
-
-    // Convert the byte array to a hex string
-    var hex = "";
-    for (var i = 0; i < array.length; i++) {
-      hex += ("00" + array[i].toString(16)).slice(-2);
-    }
-
-    return hex;
-  }
   const uniqueID = getUniqueID();
-
-  //#endregion
 
   const [screenWidth, setScreenWidth] = useState(
     Dimensions.get("screen").width
@@ -56,7 +31,7 @@ export default function App() {
     setScreenWidth(window.width);
   });
 
-  const [disabled, setDisabled] = React.useState(false);
+  const [disabled, setDisabled] = useState(false);
   const [position, setPosition] = useState("");
   const [experience, setExperience] = useState("");
   const [salary, setSalary] = useState("");
@@ -73,6 +48,13 @@ export default function App() {
   const { data, error, loading, refetch } = useFetch(
     `https://brut.azurewebsites.net/api/v1/Salary/all?pageNumber=${page}&pageSize=10`
   );
+  const {
+    data: dataPost,
+    error: errorPost,
+    loading: loadingPost,
+    setBody,
+    setUrl,
+  } = useFetch(null, "POST", null);
   const nextPage = () => {
     setPage(page + 1);
     refetch(
@@ -107,13 +89,6 @@ export default function App() {
       currency: "test",
     });
   };
-  const {
-    data: dataPost,
-    error: errorPost,
-    loading: loadingPost,
-    setBody,
-    setUrl,
-  } = useFetch(null, "POST", null);
   useEffect(() => {
     if (dataPost) {
       refetch(

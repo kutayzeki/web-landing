@@ -13,7 +13,12 @@ const SearchBar = (props) => {
       `https://brut.azurewebsites.net/api/v1/Salary/all?pageNumber=1&pageSize=10`
     );
   };
-
+  const submitEditing = () => {
+    // Send request with searchQuery
+    props.refetch(
+      `https://brut.azurewebsites.net/api/v1/Salary/query?query=${props.searchQuery}`
+    );
+  };
   const textInputRef = useRef(null);
   return (
     <View style={styles.searchContainer}>
@@ -29,13 +34,7 @@ const SearchBar = (props) => {
           setSearchText(text);
           props.onSearch(text);
         }}
-        onSubmitEditing={() => {
-          // Send request with searchQuery
-          props.refetch(
-            `https://brut.azurewebsites.net/api/v1/Salary/query?query=${props.searchQuery}`
-          );
-          // ex: axios.get(`/search?query=${searchQuery}`)
-        }}
+        onSubmitEditing={submitEditing}
       />
       {searchText.length > 0 && (
         <View style={styles.clearButton}>
