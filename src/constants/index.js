@@ -1,0 +1,4 @@
+import globalStyles from "./globalStyles";
+import { COLORS } from "./colors";
+import ROUTES from "./routes";
+export { COLORS, ROUTES, globalStyles };

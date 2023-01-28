@@ -10,7 +10,7 @@ import {
 
 import moment from "moment";
 import "moment/locale/tr";
-import useFetch from "../../useFetch";
+import useFetch from "../services/hooks/useFetch";
 
 export const SalaryCard = ({
   id,

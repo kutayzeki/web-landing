@@ -11,12 +11,13 @@ import {
   TextInput,
   ActivityIndicator,
 } from "react-native";
-import useFetch from "./useFetch";
 import { SalaryCard } from "./src/components/Card";
 import { Picker } from "@react-native-picker/picker";
 import SearchBar from "./src/components/SearchBar";
 import { IconButton } from "./src/components/Button";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import useFetch from "./src/services/hooks/useFetch";
+import { COLORS } from "./src/constants/colors";
 
 export default function App() {
   //#region check Id
@@ -131,13 +132,6 @@ export default function App() {
     }
   }, [dataPost]);
 
-  const scrollRef = useRef();
-  const onPressTouch = () => {
-    scrollRef.current?.scrollTo({
-      y: 0,
-      animated: true,
-    });
-  };
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = (query) => {
@@ -147,7 +141,7 @@ export default function App() {
     <View
       style={{
         flex: 1,
-        backgroundColor: "#FAFBFC",
+        backgroundColor: COLORS.BACKGROUND,
       }}
     >
       <View
@@ -161,7 +155,7 @@ export default function App() {
           height: 60,
           zIndex: 999,
           elevation: 1,
-          shadowColor: "#000000",
+          shadowColor: COLORS.BLACK,
           shadowOffset: { width: 0, height: 1 },
           shadowOpacity: 0.18,
           shadowRadius: 4,
@@ -339,7 +333,6 @@ export default function App() {
                 data={data?.data}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => <SalaryCard {...item} />}
-                ref={scrollRef}
               />
             )}
             {data?.totalRecords > 10 && (
@@ -552,7 +545,6 @@ export default function App() {
                 data={data?.data}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => <SalaryCard {...item} />}
-                ref={scrollRef}
               />
             )}
             {data?.totalRecords > 10 && (
@@ -758,7 +750,6 @@ export default function App() {
                 data={data?.data}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => <SalaryCard {...item} />}
-                ref={scrollRef}
               />
             )}
             {data?.totalRecords > 10 && (
