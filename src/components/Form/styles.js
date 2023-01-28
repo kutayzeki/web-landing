@@ -30,36 +30,6 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     marginTop: 20,
   },
-  midContainer: {
-    alignSelf: "center",
-    backgroundColor: "#FAFBFC",
-    flex: 1,
-    width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height,
-    flexDirection: "column",
-  },
-  midLeftContainer: {
-    width: Dimensions.get("window").width * 0.9,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: "#EDEFF2",
-    alignItems: "center",
-    alignSelf: "center",
-    margin: 16,
-    marginTop: 100,
-  },
-  midFormContainer: {
-    backgroundColor: "white",
-    padding: 8,
-    borderRadius: 8,
-    width: "100%",
-  },
-  midRightContainer: {
-    width: Dimensions.get("window").width * 0.9,
-    borderRadius: 8,
-    alignSelf: "center",
-    margin: 16,
-  },
   smallContainer: {
     alignSelf: "center",
     backgroundColor: "#FAFBFC",
@@ -78,12 +48,7 @@ export const styles = StyleSheet.create({
     margin: 12,
     marginTop: 80,
   },
-  smallFormContainer: {
-    backgroundColor: "white",
-    padding: 8,
-    borderRadius: 8,
-    width: "100%",
-  },
+
   smallRightContainer: {
     width: Dimensions.get("window").width * 0.95,
     borderRadius: 8,
@@ -110,8 +75,6 @@ export const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 8,
     width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
   },
   input: {
     width: "100%",
@@ -156,5 +119,17 @@ export const styles = StyleSheet.create({
     width: 50,
     marginLeft: 10,
     resizeMode: "contain",
+  },
+  actionButton: { marginHorizontal: 16 },
+  inputContainer: {
+    width: "100%",
+    height: "100%",
+    paddingHorizontal: 16,
+  },
+  smallInputContainer: {
+    flexDirection: "row",
+    width: "100%",
+    paddingHorizontal: 16,
+    justifyContent: "space-between",
   },
 });
