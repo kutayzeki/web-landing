@@ -1,11 +1,20 @@
 import { View, Text, FlatList } from "react-native";
-import React from "react";
+import React, { useRef, useState } from "react";
 import { styles } from "./styles";
 import currencyFormat from "../../utils/currencyFormat";
+import { IconButton } from "../Button";
 
 const SalaryAverages = ({ data }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const flatListRef = useRef(null);
+  const itemWidth = 150;
+  const offset = 400;
+  const onScroll = (event) => {
+    const { x } = event.nativeEvent.contentOffset;
+    setCurrentIndex(Math.round(x / itemWidth));
+  };
   return (
-    <View>
+    <View style={{ justifyContent: "center" }}>
       <FlatList
         horizontal={true}
         pagingEnabled={true}
@@ -17,7 +26,39 @@ const SalaryAverages = ({ data }) => {
         keyExtractor={(item) => item.averageNetSalary}
         snapToInterval={150}
         snapToAlignment={"start"}
+        ref={flatListRef}
+        onScroll={onScroll}
       />
+      {currentIndex !== 0 && (
+        <View style={styles.previous}>
+          <IconButton
+            icon={"chevron-back"}
+            size={24}
+            onPress={() =>
+              flatListRef.current.scrollToOffset({
+                animated: true,
+                offset: currentIndex * itemWidth - offset,
+              })
+            }
+            color={"black"}
+          />
+        </View>
+      )}
+      {currentIndex !== data?.length - 1 && (
+        <View style={styles.next}>
+          <IconButton
+            icon={"chevron-forward"}
+            size={24}
+            onPress={() =>
+              flatListRef.current.scrollToOffset({
+                animated: true,
+                offset: currentIndex * itemWidth + offset,
+              })
+            }
+            color={"black"}
+          />
+        </View>
+      )}
     </View>
   );
 };
@@ -32,7 +73,7 @@ const CarouselCard = ({ item }) => {
       </View>
       <View style={styles.bottomContainer}>
         <Text style={styles.levelText}>{item.level}</Text>
-        <Text style={styles.salaryText}>{`💵 ${currencyFormat(
+        <Text style={styles.salaryText}>{`${currencyFormat(
           item.averageNetSalary
         )} ₺`}</Text>
       </View>

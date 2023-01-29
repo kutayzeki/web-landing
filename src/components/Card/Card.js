@@ -81,7 +81,6 @@ export const SalaryCard = ({
         reaction: reaction,
       });
     }
-    console.log("pressed", reaction);
   };
   return (
     <View style={styles.cardContainer}>
