@@ -1,4 +1,4 @@
-let primaryColor = "#03DAC6"; // default color
+let primaryColor = "#579EAB"; // default color
 
 export const COLORS = {
   PRIMARY: primaryColor,
