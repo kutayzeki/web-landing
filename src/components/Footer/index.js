@@ -15,5 +15,7 @@ const styles = StyleSheet.create({
   footer: {
     alignItems: "baseline",
     justifyContent: "center",
+    position: "absolute",
+    bottom: 0,
   },
 });

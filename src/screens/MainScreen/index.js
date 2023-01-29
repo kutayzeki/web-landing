@@ -16,6 +16,7 @@ import { styles } from "./styles";
 import SalaryForm from "../../components/Form";
 import Header from "../../components/Header";
 import { Footer } from "../../components/Footer";
+import SalaryAverages from "../../components/Carousel";
 
 const MainScreen = () => {
   const uniqueID = getUniqueID();
@@ -32,6 +33,12 @@ const MainScreen = () => {
   const { data, error, loading, refetch } = useFetch(
     `https://brut.azurewebsites.net/api/v1/Salary/all?pageNumber=${page}&pageSize=10`
   );
+  const {
+    data: avgData,
+    error: avgError,
+    loading: avgLoading,
+    refetch: avgRefetch,
+  } = useFetch(`https://brut.azurewebsites.net/api/v1/Salary/averages`);
 
   const nextPage = () => {
     setPage(page + 1);
@@ -66,11 +73,26 @@ const MainScreen = () => {
           <View
             style={{
               ...styles.rightContainer,
-              height: Dimensions.get("window").height * 0.88,
+              height: Dimensions.get("window").height * 0.92,
             }}
           >
             <View
               style={{
+                marginTop: 10,
+                marginBottom: 5,
+              }}
+            >
+              <Text
+                style={{ ...styles.name, fontSize: 20, marginVertical: 10 }}
+              >
+                {" "}
+                Sektör Ortalamaları
+              </Text>
+              <SalaryAverages data={avgData?.data} />
+            </View>
+            <View
+              style={{
+                marginTop: 10,
                 flexDirection: "row",
                 width: "100%",
                 justifyContent: "space-between",
@@ -141,10 +163,24 @@ const MainScreen = () => {
           >
             <View
               style={{
+                marginTop: 0,
+                marginBottom: 5,
+              }}
+            >
+              <Text
+                style={{ ...styles.name, fontSize: 20, marginVertical: 10 }}
+              >
+                Sektör Ortalamaları
+              </Text>
+              <SalaryAverages data={avgData?.data} />
+            </View>
+            <View
+              style={{
                 flexDirection: "row",
                 width: "100%",
                 justifyContent: "space-between",
                 alignItems: "center",
+                marginTop: 10,
               }}
             >
               <Text style={{ ...styles.name, fontSize: 16 }}>

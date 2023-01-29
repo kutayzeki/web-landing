@@ -17,6 +17,7 @@ export const COLORS = {
   QUATERNARY: "#FF1744",
   WHITE: "#ffffff",
   BLACK: "#000000",
+  BLACK_SOFT: "#303030",
   GREY: "#BDBDBD",
   GREY_SOFT: "#D3D3D3",
   GREY_DARK: "#696969",

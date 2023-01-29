@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     alignItems: "baseline",
     justifyContent: "center",
     flexDirection: "row",
-    marginTop: 20,
+    marginTop: 0,
   },
   smallContainer: {
     alignSelf: "center",
