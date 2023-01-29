@@ -32,7 +32,6 @@ export default function useFetch(
         const json = await response.json();
         setData(json);
       }
-      //console.log(JSON.stringify(json, null, 4));
       setLoading(false);
     } catch (error) {
       setError(error);

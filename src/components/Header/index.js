@@ -17,7 +17,7 @@ export default Header;
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: COLORS.PRIMARY,
+    backgroundColor: COLORS.BACKGROUND,
     height: 50,
     elevation: 1,
     shadowColor: COLORS.BLACK,
@@ -26,10 +26,12 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     justifyContent: "center",
     alignItems: "baseline",
+    paddingHorizontal: 20,
+    zIndex: 999,
   },
   image: {
-    height: 40,
-    width: 40,
+    height: 30,
+    width: 115,
     marginLeft: 10,
     resizeMode: "contain",
   },

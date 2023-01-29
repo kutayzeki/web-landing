@@ -7,7 +7,6 @@ import useFetch from "../../services/hooks/useFetch";
 import getUniqueID from "../../utils/generateId";
 const SalaryForm = ({ refetch }) => {
   const uniqueID = getUniqueID();
-  console.log("uniqueID", uniqueID);
   const [screenWidth, setScreenWidth] = useState(
     Dimensions.get("screen").width
   );

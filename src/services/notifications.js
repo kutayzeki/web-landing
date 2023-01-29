@@ -22,7 +22,6 @@ const handleNotification = async () => {
     notificationListener.current =
       Notifications.addNotificationReceivedListener(async (notification) => {
         setNotification(notification);
-        //console.log("notification", notification);
         await analytics.logEvent("notificationReceivedOnForeground", {
           notificationTitle: notification.request.content.title,
           notificationBody: notification.request.content.body,
