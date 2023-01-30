@@ -86,7 +86,7 @@ const MainScreen = () => {
                 style={{ ...styles.name, fontSize: 20, marginVertical: 10 }}
               >
                 {" "}
-                Sektör Ortalamaları
+                Maaş Ortalamaları
               </Text>
               <SalaryAverages data={avgData?.data} />
             </View>
