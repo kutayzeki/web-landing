@@ -157,3 +157,60 @@ export const SalaryCard = ({
     </View>
   );
 };
+
+export const Averages = ({ item }) => {
+  const MIN = item.minNetSalary;
+  const MAX = item.maxNetSalary;
+
+  const toPercentage = (val) => {
+    const numerator = val - MIN;
+    const denominator = MAX - MIN;
+    console.log("numerator", numerator);
+    return (numerator / denominator) * 100;
+  };
+
+  return (
+    <View style={styles.chartContainer}>
+      <View style={styles.textContainer}>
+        <Text
+          style={{
+            position: "absolute",
+            left: 0,
+          }}
+        >
+          {`${item.minNetSalary} ₺`}
+        </Text>
+        <Text style={{ marginLeft: `${toPercentage(item.minAverageSalary)}%` }}>
+          {`${item.minAverageSalary} ₺`}
+        </Text>
+        <Text style={{ marginLeft: `${toPercentage(item.averageNetSalary)}%` }}>
+          {`${item.averageNetSalary} ₺`}
+        </Text>
+        <Text style={{ marginLeft: `${toPercentage(item.maxAverageSalary)}%` }}>
+          {`${item.maxAverageSalary} ₺`}
+        </Text>
+        <Text
+          style={{
+            position: "absolute",
+            right: 0,
+          }}
+        >
+          {`${item.maxNetSalary} ₺`}
+        </Text>
+      </View>
+      <View style={styles.chart}>
+        <View
+          style={{
+            ...styles.progress,
+            marginLeft: `${toPercentage(item.minAverageSalary)}%`,
+            width: `${
+              100 +
+              toPercentage(item.minAverageSalary) -
+              toPercentage(item.maxAverageSalary)
+            }%`,
+          }}
+        />
+      </View>
+    </View>
+  );
+};

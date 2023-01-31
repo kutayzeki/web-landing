@@ -63,4 +63,25 @@ export const styles = StyleSheet.create({
     maxWidth: 200,
     textAlign: "center",
   },
+  chart: {
+    height: 30,
+    width: "95%",
+    alignSelf: "center",
+    backgroundColor: "lightblue",
+  },
+  progress: {
+    height: 30,
+    backgroundColor: "blue",
+  },
+  chartContainer: {
+    height: 60,
+    borderWidth: 1,
+    marginBottom: 12,
+    justifyContent: "space-between",
+  },
+  textContainer: {
+    flexDirection: "row",
+    width: "100%",
+    backgroundColor: "red",
+  },
 });

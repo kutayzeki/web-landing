@@ -7,7 +7,7 @@ import {
   Dimensions,
   ActivityIndicator,
 } from "react-native";
-import { SalaryCard } from "../../components/Card/Card";
+import { Averages, SalaryCard } from "../../components/Card/Card";
 import SearchBar from "../../components/SearchBar";
 import { IconButton } from "../../components/Button";
 import useFetch from "../../services/hooks/useFetch";
@@ -174,6 +174,11 @@ const MainScreen = () => {
               </Text>
               <SalaryAverages data={avgData?.data} />
             </View>
+            <FlatList
+              data={avgData?.data}
+              keyExtractor={(item) => item.id}
+              renderItem={({ item }) => <Averages item={item} />}
+            />
             <View
               style={{
                 flexDirection: "row",
