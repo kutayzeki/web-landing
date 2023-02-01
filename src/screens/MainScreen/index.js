@@ -17,6 +17,7 @@ import SalaryForm from "../../components/Form";
 import Header from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import SalaryAverages from "../../components/Carousel";
+import HelperText from "../../components/HelperText";
 
 const MainScreen = () => {
   const uniqueID = getUniqueID();
@@ -73,7 +74,7 @@ const MainScreen = () => {
           <View
             style={{
               ...styles.rightContainer,
-              height: Dimensions.get("window").height * 0.92,
+              //height: Dimensions.get("window").height * 0.92,
             }}
           >
             <View
@@ -85,10 +86,14 @@ const MainScreen = () => {
               <Text
                 style={{ ...styles.name, fontSize: 20, marginVertical: 10 }}
               >
-                {" "}
-                Maaş Ortalamaları
+                Türkiye Maaş Ortalamaları
               </Text>
-              <SalaryAverages data={avgData?.data} />
+              <HelperText text={"Koyu alan %80lik kısmı temsil eder"} />
+              <FlatList
+                data={avgData?.data}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => <Averages item={item} />}
+              />
             </View>
             <View
               style={{
@@ -100,10 +105,7 @@ const MainScreen = () => {
                 marginBottom: 5,
               }}
             >
-              <Text style={{ ...styles.name, fontSize: 20 }}>
-                {" "}
-                En yeni maaşlar
-              </Text>
+              <Text style={{ ...styles.name, fontSize: 20 }}>Maaşlar</Text>
               <SearchBar
                 searchQuery={searchQuery}
                 onSearch={handleSearch}
@@ -170,10 +172,11 @@ const MainScreen = () => {
               <Text
                 style={{ ...styles.name, fontSize: 20, marginVertical: 10 }}
               >
-                Sektör Ortalamaları
+                Türkiye Maaş Ortalamaları
               </Text>
-              <SalaryAverages data={avgData?.data} />
+              {/* <SalaryAverages data={avgData?.data} /> */}
             </View>
+            <HelperText text={"Koyu alan %80lik kısmı temsil eder"} />
             <FlatList
               data={avgData?.data}
               keyExtractor={(item) => item.id}
@@ -188,10 +191,7 @@ const MainScreen = () => {
                 marginTop: 10,
               }}
             >
-              <Text style={{ ...styles.name, fontSize: 16 }}>
-                {" "}
-                En yeni maaşlar
-              </Text>
+              <Text style={{ ...styles.name, fontSize: 16 }}>Maaşlar</Text>
               <SearchBar
                 searchQuery={searchQuery}
                 onSearch={handleSearch}

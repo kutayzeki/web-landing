@@ -79,8 +79,8 @@ const globalStyles = StyleSheet.create({
   helperTextStyle: {
     opacity: 0.7,
     fontSize: 14,
-    marginBottom: 10,
     textAlign: "center",
+    alignSelf: "center",
   },
   textInputStyle: {
     color: COLORS.BLACK,

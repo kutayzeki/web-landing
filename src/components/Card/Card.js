@@ -7,6 +7,8 @@ import getUniqueID from "../../utils/generateId";
 import currencyFormat from "../../utils/currencyFormat";
 import { EmojiButton } from "../Button";
 import { styles } from "./styles";
+import Icon from "react-native-vector-icons/Ionicons";
+import { COLORS } from "../../constants/colors";
 
 export const SalaryCard = ({
   id,
@@ -161,6 +163,9 @@ export const SalaryCard = ({
 export const Averages = ({ item }) => {
   const MIN = item.minNetSalary;
   const MAX = item.maxNetSalary;
+  const AVG_MIN = item.minAverageSalary;
+  const AVG_MAX = item.maxAverageSalary;
+  const AVG = item.averageNetSalary;
 
   const toPercentage = (val) => {
     const numerator = val - MIN;
@@ -170,46 +175,101 @@ export const Averages = ({ item }) => {
   };
 
   return (
-    <View style={styles.chartContainer}>
-      <View style={styles.textContainer}>
+    <View
+      style={{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        paddingHorizontal: 12,
+        paddingVertical: 20,
+        backgroundColor: COLORS.WHITE,
+        borderRadius: 8,
+        marginBottom: 10,
+        borderWidth: 1,
+        borderColor: COLORS.GREY_SOFT,
+      }}
+    >
+      <View
+        style={{
+          alignSelf: "center",
+          justifyContent: "flex-start",
+          width: "33%",
+        }}
+      >
         <Text
-          style={{
-            position: "absolute",
-            left: 0,
-          }}
-        >
-          {`${item.minNetSalary} ₺`}
-        </Text>
-        <Text style={{ marginLeft: `${toPercentage(item.minAverageSalary)}%` }}>
-          {`${item.minAverageSalary} ₺`}
-        </Text>
-        <Text style={{ marginLeft: `${toPercentage(item.averageNetSalary)}%` }}>
-          {`${item.averageNetSalary} ₺`}
-        </Text>
-        <Text style={{ marginLeft: `${toPercentage(item.maxAverageSalary)}%` }}>
-          {`${item.maxAverageSalary} ₺`}
-        </Text>
-        <Text
-          style={{
-            position: "absolute",
-            right: 0,
-          }}
-        >
-          {`${item.maxNetSalary} ₺`}
-        </Text>
+          style={{ textAlign: "left", fontWeight: "300", fontSize: 16 }}
+        >{`${item.level} ${item.position}`}</Text>
       </View>
-      <View style={styles.chart}>
-        <View
-          style={{
-            ...styles.progress,
-            marginLeft: `${toPercentage(item.minAverageSalary)}%`,
-            width: `${
-              100 +
-              toPercentage(item.minAverageSalary) -
-              toPercentage(item.maxAverageSalary)
-            }%`,
-          }}
-        />
+      <View style={styles.chartContainer}>
+        <View style={{ marginLeft: `${toPercentage(AVG)}%` }}>
+          <View style={{ flexDirection: "row" }}>
+            <Icon
+              name="caret-down"
+              size={16}
+              color={COLORS.BLACK_SOFT}
+              style={{ alignSelf: "flex-end" }}
+            />
+            <View style={{ marginBottom: 10 }}>
+              <Text
+                style={{
+                  width: 100,
+                  fontSize: 12,
+                  fontWeight: "bold",
+                  position: "absolute",
+                  left: -30,
+                  bottom: 10,
+                }}
+              >{`${currencyFormat(AVG)} ₺ / ay`}</Text>
+            </View>
+          </View>
+        </View>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <View style={{ marginLeft: `${toPercentage(AVG_MIN)}%` }}>
+            <Text style={{ fontSize: 12 }}>{`${currencyFormat(
+              AVG_MIN
+            )} ₺`}</Text>
+          </View>
+          <View
+            style={{
+              marginRight: `${
+                90 - toPercentage(AVG_MAX) + toPercentage(AVG_MIN)
+              }%`,
+            }}
+          >
+            <Text style={{ fontSize: 12 }}>{`${currencyFormat(
+              AVG_MAX
+            )} ₺`}</Text>
+          </View>
+        </View>
+        <View style={styles.chart}>
+          <View
+            style={{
+              ...styles.progress,
+              marginLeft: `${toPercentage(AVG_MIN)}%`,
+              marginRight: `${
+                100 + toPercentage(AVG_MIN) - toPercentage(AVG_MAX)
+              }%`,
+            }}
+          />
+        </View>
+        <View style={{ flexDirection: "row" }}>
+          <View style={{ position: "absolute", left: 0 }}>
+            <Text
+              style={{ fontSize: 12, textAlign: "left" }}
+            >{`${currencyFormat(MIN)} ₺`}</Text>
+            <Text
+              style={{ fontSize: 12, fontWeight: "bold", textAlign: "left" }}
+            >{`En düşük`}</Text>
+          </View>
+          <View style={{ position: "absolute", right: 0 }}>
+            <Text
+              style={{ fontSize: 12, textAlign: "right" }}
+            >{`${currencyFormat(MAX)} ₺`}</Text>
+            <Text
+              style={{ fontSize: 12, fontWeight: "bold", textAlign: "right" }}
+            >{`En yüksek`}</Text>
+          </View>
+        </View>
       </View>
     </View>
   );
