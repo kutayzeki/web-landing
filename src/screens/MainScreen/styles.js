@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     width: Dimensions.get("window").width,
     minWidth: 300,
-    maxWidth: 1200,
+    maxWidth: 1400,
     height: Dimensions.get("window").height,
     alignItems: "baseline",
     justifyContent: "center",

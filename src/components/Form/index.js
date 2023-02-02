@@ -103,6 +103,53 @@ const SalaryForm = ({ refetch }) => {
   ];
   //#endregion
 
+  //#region positions
+  const positions = [
+    //name key is must.It is to show the text in front
+    { id: 1, name: "AI Research Engineer" },
+    { id: 2, name: "Analist" },
+    { id: 3, name: "Android Developer" },
+    { id: 4, name: "Backend Developer" },
+    { id: 5, name: "Big Data Engineer" },
+    { id: 6, name: "Business Intelligence Specialist" },
+    { id: 7, name: "Data Analyst" },
+    { id: 8, name: "Data Engineer" },
+    { id: 9, name: "Data Scientist" },
+    { id: 10, name: "Data Services Engineer" },
+    { id: 11, name: "DevOps Engineer" },
+    { id: 12, name: "Embedded Software Engineer" },
+    { id: 13, name: "Frontend Developer" },
+    { id: 14, name: "Fullstack Developer" },
+    { id: 15, name: "Game Developer" },
+    { id: 16, name: "IT Recruiter " },
+    { id: 17, name: "Intern" },
+    { id: 18, name: "iOS Developer" },
+    { id: 19, name: "Machine Learning Engineer" },
+    { id: 20, name: "Mechanical Engineer" },
+    { id: 21, name: "Marketing" },
+    { id: 22, name: "Mobile Developer" },
+    { id: 23, name: "Network Specialist" },
+    { id: 24, name: "Network Engineer" },
+    { id: 25, name: "Pentester" },
+    { id: 26, name: "Product Manager" },
+    { id: 27, name: "Product Lead" },
+    { id: 28, name: "Project Manager" },
+    { id: 29, name: "QA Engineer" },
+    { id: 30, name: "QA/Test Automation Engineer" },
+    { id: 31, name: "Red Team Engineer" },
+    { id: 32, name: "SAP System Specialist" },
+    { id: 33, name: "Cyber Security" },
+    { id: 34, name: "Software Engineer" },
+    { id: 35, name: "Automation Engineer" },
+    { id: 36, name: "Product Designer" },
+    { id: 37, name: "Team Lead" },
+    { id: 38, name: "Tester" },
+    { id: 39, name: "UI/UX Designer" },
+    { id: 40, name: "Data Warehouse Specialist" },
+    { id: 41, name: "Yönetici / Müdür" },
+  ];
+
+  //#endregion
   return (
     <View style={styles.formContainer}>
       <Text style={styles.title}>Maaş bilgisi paylaş</Text>
