@@ -170,7 +170,7 @@ export const Averages = ({ item }) => {
   const toPercentage = (val) => {
     const numerator = val - MIN;
     const denominator = MAX - MIN;
-    console.log("numerator", numerator);
+    //console.log("numerator", numerator);
     return (numerator / denominator) * 100;
   };
 

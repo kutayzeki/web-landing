@@ -5,6 +5,7 @@ import { styles } from "./styles";
 import { COLORS } from "../../constants/colors";
 import useFetch from "../../services/hooks/useFetch";
 import getUniqueID from "../../utils/generateId";
+import Dropdown from "../Dropdown";
 const SalaryForm = ({ refetch }) => {
   const uniqueID = getUniqueID();
   const [screenWidth, setScreenWidth] = useState(
@@ -148,7 +149,23 @@ const SalaryForm = ({ refetch }) => {
     { id: 40, name: "Data Warehouse Specialist" },
     { id: 41, name: "Yönetici / Müdür" },
   ];
+  const [selectedOption, setSelectedOption] = useState("");
 
+  const options = [
+    "Option 1",
+    "Option 2",
+    "Option 3",
+    "Option 1",
+    "Option 2",
+    "Option 3",
+    "Option 1",
+    "Option 2",
+    "Option 3",
+  ];
+  const handleOptionSelected = (option) => {
+    setSelectedOption(option);
+  };
+  console.log("selectedOption", selectedOption);
   //#endregion
   return (
     <View style={styles.formContainer}>
@@ -165,6 +182,11 @@ const SalaryForm = ({ refetch }) => {
             onChangeText={(text) => setPosition(text)}
             value={position}
             maxLength={40}
+          />
+          <Dropdown
+            options={positions}
+            onOptionSelected={handleOptionSelected}
+            placeholder={"Search.."}
           />
           <Picker
             mode="dropdown"
