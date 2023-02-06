@@ -1,19 +1,9 @@
-import {
-  Dimensions,
-  Image,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
+import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import { COLORS } from "../../constants/colors";
-import { LinearGradient } from "expo-linear-gradient";
 import globalStyles from "../../constants/globalStyles";
-import { ActionButton, HeroAction } from "../Button";
 
-const Hero = () => {
-  const [email, setEmail] = useState("");
+const Features = ({ type = "DEFAULT", order = 1 }) => {
   const [screenWidth, setScreenWidth] = useState(
     Dimensions.get("screen").width
   );
@@ -24,33 +14,47 @@ const Hero = () => {
 
   return (
     <View style={styles.container}>
-      {/* Hero  
-        
-        //Title - L
-
-        //Description - L 
-
-        //Visual - R
-
-
-        //Email - L 
-
-        //Action Item - L
-        
-
-        //Social Proof - Full View
-        */}
-
+      {order === 1 && (
+        <View style={{ marginBottom: 50 }}>
+          <Text
+            style={{
+              ...globalStyles.titleStyle,
+              textAlign: "center",
+              fontSize: screenWidth > 1000 ? 64 : 48,
+            }}
+          >
+            Our Solution for your business
+          </Text>
+          <Text
+            style={{
+              ...globalStyles.subtitleStyle,
+              textAlign: "center",
+              fontSize: screenWidth > 1000 ? 20 : 16,
+            }}
+          >
+            We make it easy for users to use our platform, that's why we provide
+            this benefit.
+          </Text>
+        </View>
+      )}
       <View
-        style={
-          screenWidth > 800 ? styles.heroContainer : styles.heroMobileContainer
-        }
+        style={[
+          styles.featureContainer,
+          {
+            flexDirection:
+              screenWidth <= 800
+                ? "column"
+                : type == "DEFAULT"
+                ? "row"
+                : "row-reverse",
+          },
+        ]}
       >
         <View
-          style={{
-            ...styles.leftContainer,
-            width: screenWidth > 800 ? screenWidth * 0.4 : screenWidth * 0.9,
-          }}
+          style={[
+            styles.leftContainer,
+            { width: screenWidth > 800 ? "50%" : "100%" },
+          ]}
         >
           <Text
             style={{
@@ -59,7 +63,7 @@ const Hero = () => {
               fontSize: screenWidth > 1000 ? 64 : 48,
             }}
           >
-            The best products start with Figma
+            Our Solution for your business
           </Text>
           <Text
             style={{
@@ -68,37 +72,9 @@ const Hero = () => {
               fontSize: screenWidth > 1000 ? 20 : 16,
             }}
           >
-            We provide many features that you can use cheaply and easily. Try it
-            now and get an interesting promo
+            We make it easy for users to use our platform, that's why we provide
+            this benefit.
           </Text>
-          {/* Email & Action Button */}
-          <View>
-            <TextInput
-              style={{
-                ...styles.input,
-                fontSize: screenWidth > 1000 ? 24 : 16,
-                alignSelf: screenWidth > 800 ? "baseline" : "center",
-                zIndex: 9999,
-              }}
-              placeholder="Your email"
-              maxLength={100}
-              onChangeText={(text) => setEmail(text)}
-              value={email}
-            />
-            <HeroAction
-              title="Try for free"
-              backgroundColor={COLORS.SECONDARY}
-              textColor={COLORS.TEXT_DARK}
-              style={{
-                height: 56,
-                width: "100%",
-                maxWidth: 350,
-                backgroundColor: COLORS.SECONDARY,
-                alignSelf: screenWidth > 800 ? "baseline" : "center",
-                marginBottom: 20,
-              }}
-            />
-          </View>
         </View>
         <View style={styles.rightContainer}>
           <Image
@@ -119,23 +95,23 @@ const Hero = () => {
           {/* Visual */}
         </View>
       </View>
-      <View>{/* Social Proof */}</View>
     </View>
   );
 };
 
-export default Hero;
+export default Features;
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.PRIMARY,
     padding: 20,
-    paddingVertical: 50,
+    paddingVertical: 100,
   },
-  heroContainer: {
+  featureContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    maxWidth: 1400,
+    maxWidth: 1200,
+    marginTop: 50,
     width: "100%",
     alignSelf: "center",
     justifyContent: "space-between",
@@ -147,7 +123,8 @@ const styles = StyleSheet.create({
   },
 
   leftContainer: {
-    maxWidth: 600,
+    //maxWidth: 600,
+    marginBottom: 20,
   },
   rightContainer: {
     justifyContent: "flex-start",

@@ -3,7 +3,6 @@ import { COLORS } from "../../constants/colors";
 
 export const styles = StyleSheet.create({
   main: {
-    flex: 1,
     backgroundColor: COLORS.BACKGROUND,
   },
 
@@ -11,10 +10,7 @@ export const styles = StyleSheet.create({
     alignSelf: "center",
     backgroundColor: COLORS.BACKGROUND,
     flex: 1,
-    width: Dimensions.get("window").width,
-    minWidth: 300,
-    height: Dimensions.get("window").height,
-    alignItems: "baseline",
+    alignItems: "flex-start",
     justifyContent: "center",
     flexDirection: "row",
     marginTop: 0,
