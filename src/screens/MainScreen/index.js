@@ -6,6 +6,7 @@ import { styles } from "./styles";
 import Header from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import Hero from "../../components/Hero";
+import Features from "../../components/Sections/Features";
 
 const MainScreen = () => {
   const uniqueID = getUniqueID();
@@ -21,39 +22,20 @@ const MainScreen = () => {
   return (
     <View style={styles.main}>
       <Header />
-      <View
+      {/*       <View
         style={
           screenWidth > 994
             ? { ...styles.container, width: screenWidth }
             : { ...styles.smallContainer, width: screenWidth }
         }
-      >
-        <Hero />
+      ></View> */}
+      <Hero />
 
-        {/* Section 1 
-        
-        //Title
-        //Desc
+      <Features type={"DEFAULT"} order={1} />
+      <Features type={"REVERSE"} order={2} />
+      <Features type={"DEFAULT"} order={3} />
 
-        //Feature 1 
-        //Feature 2
-        //Feature 3 
-        //Feature 4
-
-        */}
-
-        {/* Section 2 
-        
-        //Title - L
-        //Desc - L
-        //Subtitle - optional L
-        //Action Item - L
-
-        //Visual - R
-        
-        */}
-
-        {/* Pricing  
+      {/* Pricing  
         
         //Title - Full View
         //Desc - Full View
@@ -67,7 +49,7 @@ const MainScreen = () => {
         
         */}
 
-        {/* Testimonial  
+      {/* Testimonial  
         
         //Title
 
@@ -76,7 +58,6 @@ const MainScreen = () => {
         //Testimonial 3
         
         */}
-      </View>
 
       {/*  <Footer /> */}
     </View>
