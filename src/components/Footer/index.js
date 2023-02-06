@@ -13,9 +13,7 @@ export const Footer = () => {
 
 const styles = StyleSheet.create({
   footer: {
-    alignItems: "baseline",
+    alignItems: "flex-end",
     justifyContent: "center",
-    position: "absolute",
-    bottom: 0,
   },
 });

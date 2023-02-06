@@ -85,7 +85,7 @@ export const SalaryCard = ({
     }
   };
   return (
-    <View style={styles.cardContainer}>
+    <View key={id} style={styles.cardContainer}>
       <View style={styles.contentContainer}>
         <View style={styles.leftContainer}>
           <View style={styles.leftContent}>
@@ -176,6 +176,7 @@ export const Averages = ({ item }) => {
 
   return (
     <View
+      key={item.id}
       style={{
         flexDirection: "row",
         justifyContent: "space-between",

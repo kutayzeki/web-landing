@@ -1,4 +1,4 @@
-let primaryColor = "#579EAB"; // default color
+let primaryColor = "#6200EE"; // default color
 
 export const COLORS = {
   PRIMARY: primaryColor,
@@ -12,7 +12,7 @@ export const COLORS = {
   PRIMARY800: "#01574f",
   PRIMARY900: "#012c28",
   PRIMARY1000: "#000000",
-  SECONDARY: "#6200EE",
+  SECONDARY: "#03DAC6",
   TERTIARY: "#FFC107",
   QUATERNARY: "#FF1744",
   WHITE: "#ffffff",
@@ -23,7 +23,7 @@ export const COLORS = {
   GREY_DARK: "#696969",
   TEXT_LIGHT: "#f5f5f5",
   TEXT_DARK: "#4F5F80",
-  TEXT_PRIMARY: "#6200EE",
+  TEXT_PRIMARY: "#8A57F9",
   TEXT_SECONDARY: "#03DAC6",
   TEXT_TERTIARY: "#FFC107",
   BACKGROUND: "#FAFBFC",

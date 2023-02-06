@@ -13,7 +13,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     width: Dimensions.get("window").width,
     minWidth: 300,
-    maxWidth: 1400,
     height: Dimensions.get("window").height,
     alignItems: "baseline",
     justifyContent: "center",
@@ -22,7 +21,7 @@ export const styles = StyleSheet.create({
   },
   smallContainer: {
     alignSelf: "center",
-    backgroundColor: COLORS.BACKGROUND,
+    backgroundColor: COLORS.PRIMARY,
     flex: 1,
     width: Dimensions.get("window").width,
     height: Dimensions.get("window").height,
@@ -50,8 +49,6 @@ export const styles = StyleSheet.create({
   leftContainer: {
     width: "30%",
     borderRadius: 8,
-    borderWidth: 1,
-    borderColor: COLORS.BORDER,
     alignItems: "center",
     alignSelf: "flex-start",
     margin: 16,
