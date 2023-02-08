@@ -7,6 +7,7 @@ import Header from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import Hero from "../../components/Hero";
 import Features from "../../components/Sections/Features";
+import Pricing from "../../components/Sections/Pricing";
 
 const MainScreen = () => {
   const uniqueID = getUniqueID();
@@ -35,19 +36,7 @@ const MainScreen = () => {
       <Features type={"REVERSE"} order={2} />
       <Features type={"DEFAULT"} order={3} />
 
-      {/* Pricing  
-        
-        //Title - Full View
-        //Desc - Full View
-        // Annual or Monthly Switch
-
-        //Option 1
-        //Option 2
-        //Option 3
-
-        //Visual - R
-        
-        */}
+      <Pricing />
 
       {/* Testimonial  
         
