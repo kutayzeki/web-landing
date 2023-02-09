@@ -38,9 +38,12 @@ export const Footer = () => {
           padding: 16,
           justifyContent: "space-between",
           width: screenWidth > 800 ? 500 : 400,
+          marginBottom: 16,
+          marginTop: 16,
+          marginRight: 16,
         }}
       >
-        <View style={{}}>
+        <View style={{ marginBottom: 16 }}>
           <Text
             style={[
               globalStyles.text18Style,
@@ -59,7 +62,7 @@ export const Footer = () => {
             Testimonial
           </Text>
         </View>
-        <View style={{}}>
+        <View style={{ marginBottom: 16 }}>
           <Text
             style={[
               globalStyles.text18Style,
@@ -78,7 +81,7 @@ export const Footer = () => {
             Terms of Services
           </Text>
         </View>
-        <View style={{ marginBottom: 8 }}>
+        <View style={{ marginBottom: 16 }}>
           <Text
             style={[
               globalStyles.text18Style,
@@ -109,7 +112,7 @@ export const Footer = () => {
             ]}
           >
             Twitter
-          </Text>{" "}
+          </Text>
           <Text
             style={[
               globalStyles.text16Style,
