@@ -25,11 +25,18 @@ const Header = () => {
   const Menu = () => {
     return (
       <TouchableWithoutFeedback onPress={() => setMenuVisible(false)}>
-        <Modal animationType="slide" transparent={true} visible={menuVisible}>
+        <Modal animationType="none" transparent={true} visible={menuVisible}>
           <View style={styles.modalContainer}>
-            <View style={{ position: "absolute", top: 10, right: 10 }}>
+            <View
+              style={{
+                position: "absolute",
+                top: 20,
+                right: 10,
+              }}
+            >
               <IconButton
                 icon="ios-close"
+                color={COLORS.TEXT_LIGHT}
                 size={30}
                 onPress={() => {
                   setMenuVisible(false);
@@ -37,20 +44,28 @@ const Header = () => {
               />
             </View>
             <View style={{ height: 50 }}></View>
-            <TextButton text="Product" onPress={() => console.log("pressed")} />
-            <TextButton
-              text="Solution"
-              onPress={() => console.log("pressed")}
-            />
-            <TextButton
-              text="Customer"
-              onPress={() => console.log("pressed")}
-            />
-            <TextButton text="Pricing" onPress={() => console.log("pressed")} />
-            <TextButton
-              text="About us"
-              onPress={() => console.log("pressed")}
-            />
+            <View style={{ height: "50%", justifyContent: "space-between" }}>
+              <TextButton
+                text="Product"
+                onPress={() => console.log("pressed")}
+              />
+              <TextButton
+                text="Solution"
+                onPress={() => console.log("pressed")}
+              />
+              <TextButton
+                text="Customer"
+                onPress={() => console.log("pressed")}
+              />
+              <TextButton
+                text="Pricing"
+                onPress={() => console.log("pressed")}
+              />
+              <TextButton
+                text="About us"
+                onPress={() => console.log("pressed")}
+              />
+            </View>
             <AuthButtons />
           </View>
         </Modal>
@@ -107,6 +122,8 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   modalContainer: {
+    height: "100%",
+    justifyContent: "space-between",
     position: "absolute",
     top: 0,
     right: 0,

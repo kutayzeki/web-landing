@@ -47,7 +47,7 @@ export const EmojiButton = ({ source, count, onPress, pressed }) => (
 );
 export const AuthButtons = () => {
   return (
-    <View style={{ flexDirection: "row" }}>
+    <View style={{ flexDirection: "row", alignSelf: "center" }}>
       <ActionButtonInverse
         title="Login"
         onPress={() => console.log("pressed")}
