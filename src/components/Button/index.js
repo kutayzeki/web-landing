@@ -127,7 +127,7 @@ export const ActionButtonInverse = ({
     </TouchableOpacity>
   );
 };
-export const TextButton = ({ text = "..", onPress }) => {
+export const TextButton = ({ text = "..", onPress, textStyle }) => {
   return (
     <Pressable
       style={({ pressed }) => [{ opacity: pressed ? 0.7 : 1.0 }]}
@@ -140,7 +140,7 @@ export const TextButton = ({ text = "..", onPress }) => {
       }}
     >
       <View>
-        <Text style={globalStyles.textButton}>{text}</Text>
+        <Text style={[globalStyles.textButton, textStyle]}>{text}</Text>
       </View>
     </Pressable>
   );
