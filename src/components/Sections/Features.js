@@ -3,7 +3,11 @@ import React, { useState } from "react";
 import { COLORS } from "../../constants/colors";
 import globalStyles from "../../constants/globalStyles";
 
-const Features = ({ type = "DEFAULT", order = 1 }) => {
+const Features = ({
+  type = "DEFAULT",
+  order = 1,
+  imageSource = require("../../../assets/images/solution1.png"),
+}) => {
   const [screenWidth, setScreenWidth] = useState(
     Dimensions.get("screen").width
   );
@@ -90,7 +94,7 @@ const Features = ({ type = "DEFAULT", order = 1 }) => {
                   : screenWidth * 0.9,
               maxHeight: screenWidth <= 800 && 400,
             }}
-            source={require("../../../assets/icon.png")}
+            source={imageSource}
           />
           {/* Visual */}
         </View>

@@ -114,7 +114,7 @@ const Hero = () => {
                   : screenWidth * 0.9,
               maxHeight: screenWidth <= 800 && 400,
             }}
-            source={require("../../../assets/icon.png")}
+            source={require("../../../assets/images/hero.png")}
           />
           {/* Visual */}
         </View>
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 56,
-    backgroundColor: "#8A57F9",
+    backgroundColor: COLORS.TEXT_INPUT,
     maxWidth: 350,
     width: "100%",
     borderRadius: 5,

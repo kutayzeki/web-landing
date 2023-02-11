@@ -1,4 +1,8 @@
-let primaryColor = "#6200EE"; // default color
+let primaryColor = "#303030"; // default color
+let secondaryColor = "#FF1744"; // default color
+let inputColor = "#696969"; // default color
+let primaryText = "#f5f5f5"; // default color
+let secondaryText = "#303030"; // default color
 
 export const COLORS = {
   PRIMARY: primaryColor,
@@ -12,7 +16,7 @@ export const COLORS = {
   PRIMARY800: "#01574f",
   PRIMARY900: "#012c28",
   PRIMARY1000: "#000000",
-  SECONDARY: "#03DAC6",
+  SECONDARY: secondaryColor,
   TERTIARY: "#FFC107",
   QUATERNARY: "#FF1744",
   WHITE: "#ffffff",
@@ -23,8 +27,9 @@ export const COLORS = {
   GREY_DARK: "#696969",
   TEXT_LIGHT: "#f5f5f5",
   TEXT_DARK: "#4F5F80",
-  TEXT_PRIMARY: "#f5f5f5",
-  TEXT_SECONDARY: "#303030",
+  TEXT_PRIMARY: primaryText,
+  TEXT_SECONDARY: secondaryText,
+  TEXT_INPUT: inputColor,
   TEXT_TERTIARY: "#FFC107",
   BACKGROUND: "#FAFBFC",
   ERROR: "#FF1744",

@@ -26,9 +26,21 @@ const MainScreen = () => {
 
       <Hero />
 
-      <Features type={"DEFAULT"} order={1} />
-      <Features type={"REVERSE"} order={2} />
-      <Features type={"DEFAULT"} order={3} />
+      <Features
+        type={"DEFAULT"}
+        order={1}
+        imageSource={require("../../../assets/images/solution1.png")}
+      />
+      <Features
+        type={"REVERSE"}
+        order={2}
+        imageSource={require("../../../assets/images/solution2.png")}
+      />
+      <Features
+        type={"DEFAULT"}
+        order={3}
+        imageSource={require("../../../assets/images/solution3.png")}
+      />
 
       <Pricing />
 
