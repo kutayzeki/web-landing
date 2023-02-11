@@ -79,7 +79,7 @@ export const StandartPrice = ({ type, price, per }) => {
             color: COLORS.TEXT_SECONDARY,
           }}
         >
-          {per}
+          {` $ ${per}`}
         </Text>
       </View>
       <HeroAction
@@ -139,6 +139,34 @@ export const ExtendedPrice = ({ type, price, per }) => {
       >
         Extended
       </Text>
+      {/* discount */}
+      {per === "/year" && (
+        <View
+          style={{
+            backgroundColor: COLORS.SUCCESS,
+            position: "absolute",
+            top: 5,
+            right: 5,
+            paddingHorizontal: 15,
+            borderRadius: 20,
+            shadowColor: COLORS.BLACK,
+            shadowOffset: { width: 2, height: 3 },
+            shadowOpacity: 0.2,
+            shadowRadius: 2,
+          }}
+        >
+          <Text
+            style={{
+              fontWeight: "bold",
+              fontSize: 24,
+
+              color: COLORS.TEXT_PRIMARY,
+            }}
+          >
+            -33%
+          </Text>
+        </View>
+      )}
       {/* Subtitle */}
       <Text
         style={{
@@ -175,7 +203,7 @@ export const ExtendedPrice = ({ type, price, per }) => {
             color: COLORS.TEXT_SECONDARY,
           }}
         >
-          {per}
+          {` $ ${per}`}
         </Text>
       </View>
       <HeroAction
@@ -271,7 +299,7 @@ export const PremiumPrice = ({ type, price, per }) => {
             color: COLORS.TEXT_SECONDARY,
           }}
         >
-          {per}
+          {` $ ${per}`}
         </Text>
       </View>
       <HeroAction
