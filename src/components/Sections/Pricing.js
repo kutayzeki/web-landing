@@ -13,7 +13,9 @@ import { HeroAction } from "../Button";
 import Icon from "react-native-vector-icons/Ionicons";
 import { ExtendedPrice, PremiumPrice, StandartPrice } from "../Card/Price";
 
-const Pricing = ({ type = "DEFAULT", order = 1 }) => {
+const Pricing = () => {
+  const [period, setPeriod] = useState("year");
+
   const [screenWidth, setScreenWidth] = useState(
     Dimensions.get("screen").width
   );
@@ -21,21 +23,7 @@ const Pricing = ({ type = "DEFAULT", order = 1 }) => {
   Dimensions.addEventListener("change", ({ window }) => {
     setScreenWidth(window.width);
   });
-  {
-    /* Pricing  
-        
-        //Title - Full View
-        //Desc - Full View
-        // Annual or Monthly Switch
 
-        //Option 1
-        //Option 2
-        //Option 3
-
-        //Visual - R
-        
-        */
-  }
   return (
     <View style={styles.container}>
       <View style={{ marginBottom: 0 }}>
@@ -76,6 +64,7 @@ const Pricing = ({ type = "DEFAULT", order = 1 }) => {
             ...globalStyles.subtitleStyle,
             fontSize: screenWidth > 1000 ? 20 : 16,
             paddingRight: 10,
+            fontWeight: period === "month" && "bold",
           }}
         >
           Monthly
@@ -85,20 +74,22 @@ const Pricing = ({ type = "DEFAULT", order = 1 }) => {
             transform: [{ scaleX: 2 }, { scaleY: 2 }],
             marginHorizontal: 20,
           }}
-          value={true}
+          value={period === "year"}
+          onValueChange={(value) => setPeriod(value ? "year" : "month")}
         />
         <Text
           style={{
             ...globalStyles.subtitleStyle,
             paddingLeft: 10,
             fontSize: screenWidth > 1000 ? 20 : 16,
+            fontWeight: period === "year" && "bold",
           }}
         >
           Annually
         </Text>
       </View>
       {/* Cards */}
-      <PriceSection />
+      <PriceSection period={period} />
     </View>
   );
 };
@@ -140,7 +131,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const PriceSection = () => {
+const PriceSection = ({ period }) => {
+  //per month
+  //TODO get to a config file
+  const standartPrice = 10;
+  const extendedPrice = 15;
+  const premiumPrice = 20;
   const [screenWidth, setScreenWidth] = useState(
     Dimensions.get("screen").width
   );
@@ -158,9 +154,20 @@ const PriceSection = () => {
         alignSelf: "center",
       }}
     >
-      <StandartPrice type={"DEFAULT"} price={8} per={"/month"} />
-      <ExtendedPrice price={12} per={"/month"} />
-      <PremiumPrice type={"DEFAULT"} price={20} per={"/month"} />
+      <StandartPrice
+        type={"DEFAULT"}
+        price={period === "year" ? standartPrice * 8 : standartPrice}
+        per={`/${period}`}
+      />
+      <ExtendedPrice
+        price={period === "year" ? extendedPrice * 8 : extendedPrice}
+        per={`/${period}`}
+      />
+      <PremiumPrice
+        type={"DEFAULT"}
+        price={period === "year" ? premiumPrice * 8 : premiumPrice}
+        per={`/${period}`}
+      />
     </View>
   );
 };
