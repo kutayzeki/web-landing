@@ -23,13 +23,7 @@ const MainScreen = () => {
   return (
     <View style={styles.main}>
       <Header />
-      {/*       <View
-        style={
-          screenWidth > 994
-            ? { ...styles.container, width: screenWidth }
-            : { ...styles.smallContainer, width: screenWidth }
-        }
-      ></View> */}
+
       <Hero />
 
       <Features type={"DEFAULT"} order={1} />
@@ -38,17 +32,8 @@ const MainScreen = () => {
 
       <Pricing />
 
-      {/* Testimonial  
-        
-        //Title
+      {/* Testimonial */}
 
-        //Testimonial 1
-        //Testimonial 2
-        //Testimonial 3
-        
-        */}
-
-      {/*  <Footer /> */}
       <Footer />
     </View>
   );

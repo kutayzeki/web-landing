@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   topContainer: {
-    backgroundColor: COLORS.BLACK_SOFT,
+    backgroundcolor: COLORS.TEXT_SECONDARY,
     height: "68%",
     borderTopLeftRadius: 5,
     borderTopRightRadius: 5,

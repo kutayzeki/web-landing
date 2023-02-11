@@ -101,7 +101,7 @@ export const ActionButton = ({
 
 export const ActionButtonInverse = ({
   backgroundColor = "transparent",
-  textColor = COLORS.WHITE,
+  textColor = COLORS.TEXT_PRIMARY,
   title = "Login",
   onPress,
 }) => {

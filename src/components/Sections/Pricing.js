@@ -138,18 +138,6 @@ const styles = StyleSheet.create({
     width: 500,
     resizeMode: "contain",
   },
-  input: {
-    height: 56,
-    backgroundColor: COLORS.TEXT_PRIMARY,
-    maxWidth: 350,
-    width: "100%",
-    borderRadius: 5,
-    borderWidth: 0.5,
-    borderColor: COLORS.BORDER,
-    padding: 20,
-    color: COLORS.GREY_SOFT,
-    marginBottom: 12,
-  },
 });
 
 const PriceSection = () => {

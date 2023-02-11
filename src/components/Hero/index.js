@@ -88,7 +88,7 @@ const Hero = () => {
             <HeroAction
               title="Try for free"
               backgroundColor={COLORS.SECONDARY}
-              textColor={COLORS.TEXT_DARK}
+              textColor={COLORS.TEXT_SECONDARY}
               style={{
                 height: 56,
                 width: "100%",
@@ -159,14 +159,14 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 56,
-    backgroundColor: COLORS.TEXT_PRIMARY,
+    backgroundColor: "#8A57F9",
     maxWidth: 350,
     width: "100%",
     borderRadius: 5,
     borderWidth: 0.5,
     borderColor: COLORS.BORDER,
     padding: 20,
-    color: COLORS.GREY_SOFT,
+    color: COLORS.TEXT_PRIMARY,
     marginBottom: 12,
   },
 });

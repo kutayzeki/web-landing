@@ -59,7 +59,7 @@ export const Footer = () => {
             textStyle={{
               marginBottom: 8,
               textAlign: "left",
-              color: COLORS.BLACK_SOFT,
+              color: COLORS.TEXT_SECONDARY,
             }}
             onPress={() => console.log("pressed")}
           />
@@ -68,7 +68,7 @@ export const Footer = () => {
             textStyle={{
               marginBottom: 8,
               textAlign: "left",
-              color: COLORS.BLACK_SOFT,
+              color: COLORS.TEXT_SECONDARY,
             }}
             onPress={() => console.log("pressed")}
           />
@@ -77,7 +77,7 @@ export const Footer = () => {
             textStyle={{
               marginBottom: 8,
               textAlign: "left",
-              color: COLORS.BLACK_SOFT,
+              color: COLORS.TEXT_SECONDARY,
             }}
             onPress={() => console.log("pressed")}
           />
@@ -96,7 +96,7 @@ export const Footer = () => {
             textStyle={{
               marginBottom: 8,
               textAlign: "left",
-              color: COLORS.BLACK_SOFT,
+              color: COLORS.TEXT_SECONDARY,
             }}
             onPress={() => console.log("pressed")}
           />
@@ -105,7 +105,7 @@ export const Footer = () => {
             textStyle={{
               marginBottom: 8,
               textAlign: "left",
-              color: COLORS.BLACK_SOFT,
+              color: COLORS.TEXT_SECONDARY,
             }}
             onPress={() => console.log("pressed")}
           />
@@ -114,7 +114,7 @@ export const Footer = () => {
             textStyle={{
               marginBottom: 8,
               textAlign: "left",
-              color: COLORS.BLACK_SOFT,
+              color: COLORS.TEXT_SECONDARY,
             }}
             onPress={() => console.log("pressed")}
           />
@@ -133,7 +133,7 @@ export const Footer = () => {
             textStyle={{
               marginBottom: 8,
               textAlign: "left",
-              color: COLORS.BLACK_SOFT,
+              color: COLORS.TEXT_SECONDARY,
             }}
             onPress={() => console.log("pressed")}
           />
@@ -142,7 +142,7 @@ export const Footer = () => {
             textStyle={{
               marginBottom: 8,
               textAlign: "left",
-              color: COLORS.BLACK_SOFT,
+              color: COLORS.TEXT_SECONDARY,
             }}
             onPress={() => console.log("pressed")}
           />
@@ -151,7 +151,7 @@ export const Footer = () => {
             textStyle={{
               marginBottom: 8,
               textAlign: "left",
-              color: COLORS.BLACK_SOFT,
+              color: COLORS.TEXT_SECONDARY,
             }}
             onPress={() => console.log("pressed")}
           />

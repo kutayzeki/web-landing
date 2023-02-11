@@ -38,6 +38,7 @@ export const StandartPrice = ({ type, price, per }) => {
           textAlign: "center",
           fontSize: screenWidth > 1000 ? 32 : 24,
           marginBottom: 12,
+          color: COLORS.TEXT_SECONDARY,
         }}
       >
         Standart
@@ -48,6 +49,7 @@ export const StandartPrice = ({ type, price, per }) => {
           textAlign: "center",
           fontSize: screenWidth > 1000 ? 20 : 16,
           marginBottom: 12,
+          color: COLORS.TEXT_SECONDARY,
         }}
       >
         The national average cost of buying coin easy.
@@ -65,6 +67,7 @@ export const StandartPrice = ({ type, price, per }) => {
             textAlign: "center",
             fontSize: screenWidth > 1000 ? 40 : 32,
             marginBottom: 12,
+            color: COLORS.TEXT_SECONDARY,
           }}
         >
           {price}
@@ -73,6 +76,7 @@ export const StandartPrice = ({ type, price, per }) => {
           style={{
             textAlign: "center",
             fontSize: screenWidth > 1000 ? 20 : 16,
+            color: COLORS.TEXT_SECONDARY,
           }}
         >
           {per}
@@ -89,7 +93,9 @@ export const StandartPrice = ({ type, price, per }) => {
           alignSelf: "center",
           marginBottom: 20,
         }}
-        textColor={type === "DEFAULT" ? COLORS.WHITE : COLORS.BLACK}
+        textColor={
+          type === "DEFAULT" ? COLORS.TEXT_PRIMARY : COLORS.TEXT_SECONDARY
+        }
       />
       <Benefits type={"DEFAULT"} text={"5 collections"} />
       <Benefits type={"DEFAULT"} text={"Worldwide accessibility "} />
@@ -128,6 +134,7 @@ export const ExtendedPrice = ({ type, price, per }) => {
           textAlign: "center",
           fontSize: screenWidth > 1000 ? 32 : 24,
           marginBottom: 12,
+          color: COLORS.TEXT_SECONDARY,
         }}
       >
         Extended
@@ -138,6 +145,7 @@ export const ExtendedPrice = ({ type, price, per }) => {
           textAlign: "center",
           fontSize: screenWidth > 1000 ? 20 : 16,
           marginBottom: 12,
+          color: COLORS.TEXT_SECONDARY,
         }}
       >
         The national average cost of buying coin easy.
@@ -155,6 +163,7 @@ export const ExtendedPrice = ({ type, price, per }) => {
             textAlign: "center",
             fontSize: screenWidth > 1000 ? 40 : 32,
             marginBottom: 12,
+            color: COLORS.TEXT_SECONDARY,
           }}
         >
           {price}
@@ -163,6 +172,7 @@ export const ExtendedPrice = ({ type, price, per }) => {
           style={{
             textAlign: "center",
             fontSize: screenWidth > 1000 ? 20 : 16,
+            color: COLORS.TEXT_SECONDARY,
           }}
         >
           {per}
@@ -179,7 +189,9 @@ export const ExtendedPrice = ({ type, price, per }) => {
           alignSelf: "center",
           marginBottom: 20,
         }}
-        textColor={type === "DEFAULT" ? COLORS.WHITE : COLORS.BLACK}
+        textColor={
+          type === "DEFAULT" ? COLORS.TEXT_PRIMARY : COLORS.TEXT_SECONDARY
+        }
       />
       <Benefits type={"DEFAULT"} text={"5 collections"} />
       <Benefits type={"DEFAULT"} text={"Worldwide accessibility "} />
@@ -218,6 +230,7 @@ export const PremiumPrice = ({ type, price, per }) => {
           textAlign: "center",
           fontSize: screenWidth > 1000 ? 32 : 24,
           marginBottom: 12,
+          color: COLORS.TEXT_SECONDARY,
         }}
       >
         Premium
@@ -228,6 +241,7 @@ export const PremiumPrice = ({ type, price, per }) => {
           textAlign: "center",
           fontSize: screenWidth > 1000 ? 20 : 16,
           marginBottom: 12,
+          color: COLORS.TEXT_SECONDARY,
         }}
       >
         The national average cost of buying coin easy.
@@ -245,6 +259,7 @@ export const PremiumPrice = ({ type, price, per }) => {
             textAlign: "center",
             fontSize: screenWidth > 1000 ? 40 : 32,
             marginBottom: 12,
+            color: COLORS.TEXT_SECONDARY,
           }}
         >
           {price}
@@ -253,6 +268,7 @@ export const PremiumPrice = ({ type, price, per }) => {
           style={{
             textAlign: "center",
             fontSize: screenWidth > 1000 ? 20 : 16,
+            color: COLORS.TEXT_SECONDARY,
           }}
         >
           {per}
@@ -269,7 +285,9 @@ export const PremiumPrice = ({ type, price, per }) => {
           alignSelf: "center",
           marginBottom: 20,
         }}
-        textColor={type === "DEFAULT" ? COLORS.WHITE : COLORS.BLACK}
+        textColor={
+          type === "DEFAULT" ? COLORS.TEXT_PRIMARY : COLORS.TEXT_SECONDARY
+        }
       />
       <Benefits type={"DEFAULT"} text={"5 collections"} />
       <Benefits type={"DEFAULT"} text={"Worldwide accessibility "} />
@@ -308,6 +326,7 @@ const Benefits = ({ type, text }) => {
       <Text
         style={{
           fontSize: screenWidth > 1000 ? 24 : 20,
+          color: COLORS.TEXT_SECONDARY,
         }}
       >
         {text}
