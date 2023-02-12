@@ -14,7 +14,7 @@ import { AuthButtons, IconButton, TextButton } from "../Button";
 import NavBar from "../NavBar";
 import { useTranslation } from "react-i18next";
 
-const Header = () => {
+const Header = ({ productRef, pricingRef, aboutRef }) => {
   const [screenWidth, setScreenWidth] = useState(
     Dimensions.get("screen").width
   );
@@ -47,26 +47,11 @@ const Header = () => {
             </View>
             <View style={{ height: 50 }}></View>
             <View style={{ height: "50%", justifyContent: "space-between" }}>
-              <TextButton
-                text={t("header.product")}
-                onPress={() => console.log("pressed")}
-              />
-              <TextButton
-                text={t("header.solution")}
-                onPress={() => console.log("pressed")}
-              />
-              <TextButton
-                text={t("header.customer")}
-                onPress={() => console.log("pressed")}
-              />
-              <TextButton
-                text={t("header.pricing")}
-                onPress={() => console.log("pressed")}
-              />
-              <TextButton
-                text={t("header.aboutUs")}
-                onPress={() => console.log("pressed")}
-              />
+              <TextButton text={t("header.product")} onPress={productRef} />
+              <TextButton text={t("header.solution")} onPress={productRef} />
+              <TextButton text={t("header.customer")} onPress={productRef} />
+              <TextButton text={t("header.pricing")} onPress={pricingRef} />
+              <TextButton text={t("header.aboutUs")} onPress={aboutRef} />
             </View>
             <AuthButtons />
           </View>
@@ -83,7 +68,12 @@ const Header = () => {
         />
         {screenWidth > 800 ? (
           <>
-            <NavBar /> <AuthButtons />
+            <NavBar
+              productRef={productRef}
+              pricingRef={pricingRef}
+              aboutRef={aboutRef}
+            />
+            <AuthButtons />
           </>
         ) : (
           <IconButton

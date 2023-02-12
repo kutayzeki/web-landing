@@ -1,10 +1,17 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { View, Text, StyleSheet, Dimensions, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  Image,
+  Linking,
+} from "react-native";
 import { COLORS } from "../../constants/colors";
 import globalStyles from "../../constants/globalStyles";
 import { IconButton, TextButton } from "../Button";
-export const Footer = () => {
+export const Footer = ({ productRef, pricingRef, aboutRef }) => {
   const { t } = useTranslation();
 
   const [screenWidth, setScreenWidth] = useState(
@@ -64,7 +71,7 @@ export const Footer = () => {
               textAlign: "left",
               color: COLORS.TEXT_SECONDARY,
             }}
-            onPress={() => console.log("pressed")}
+            onPress={aboutRef}
           />
           <TextButton
             text={t("footer.product")}
@@ -73,7 +80,7 @@ export const Footer = () => {
               textAlign: "left",
               color: COLORS.TEXT_SECONDARY,
             }}
-            onPress={() => console.log("pressed")}
+            onPress={productRef}
           />
           <TextButton
             text={t("footer.testimonial")}
@@ -82,7 +89,7 @@ export const Footer = () => {
               textAlign: "left",
               color: COLORS.TEXT_SECONDARY,
             }}
-            onPress={() => console.log("pressed")}
+            onPress={aboutRef}
           />
         </View>
         <View style={{ marginBottom: 16 }}>
@@ -101,7 +108,7 @@ export const Footer = () => {
               textAlign: "left",
               color: COLORS.TEXT_SECONDARY,
             }}
-            onPress={() => console.log("pressed")}
+            onPress={aboutRef}
           />
           <TextButton
             text={t("footer.policy")}
@@ -110,7 +117,7 @@ export const Footer = () => {
               textAlign: "left",
               color: COLORS.TEXT_SECONDARY,
             }}
-            onPress={() => console.log("pressed")}
+            onPress={aboutRef}
           />
           <TextButton
             text={t("footer.terms")}
@@ -119,7 +126,7 @@ export const Footer = () => {
               textAlign: "left",
               color: COLORS.TEXT_SECONDARY,
             }}
-            onPress={() => console.log("pressed")}
+            onPress={aboutRef}
           />
         </View>
         <View style={{ marginBottom: 16 }}>
@@ -138,7 +145,7 @@ export const Footer = () => {
               textAlign: "left",
               color: COLORS.TEXT_SECONDARY,
             }}
-            onPress={() => console.log("pressed")}
+            onPress={pricingRef}
           />
           <TextButton
             text={t("footer.customer")}
@@ -147,7 +154,7 @@ export const Footer = () => {
               textAlign: "left",
               color: COLORS.TEXT_SECONDARY,
             }}
-            onPress={() => console.log("pressed")}
+            onPress={productRef}
           />
           <TextButton
             text={t("footer.product")}
@@ -156,7 +163,7 @@ export const Footer = () => {
               textAlign: "left",
               color: COLORS.TEXT_SECONDARY,
             }}
-            onPress={() => console.log("pressed")}
+            onPress={productRef}
           />
         </View>
         <View
@@ -171,7 +178,7 @@ export const Footer = () => {
             color={"#00acee"}
             size={36}
             onPress={() => {
-              console.log("pressed");
+              Linking.openURL("https://twitter.com");
             }}
           />
           <IconButton
@@ -179,7 +186,7 @@ export const Footer = () => {
             color={COLORS.BLACK}
             size={36}
             onPress={() => {
-              console.log("pressed");
+              Linking.openURL("https://instagram.com");
             }}
           />
         </View>
