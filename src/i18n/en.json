@@ -14,7 +14,16 @@
     "emailInput": "Your email",
     "actionItem": "Try for free"
   },
-  "features": {},
+  "features": {
+    "title": "Our Solution for your business",
+    "subtitle": "We make it easy for users to use our platform, that's why we provide this benefit.",
+    "featureTitle1": "Our Solution for your business",
+    "featureTitle2": "Our Solution for your business",
+    "featureTitle3": "Our Solution for your business",
+    "featureSubtitle1": "We make it easy for users to use our platform, that's why we provide this benefit.",
+    "featureSubtitle2": "We make it easy for users to use our platform, that's why we provide this benefit.",
+    "featureSubtitle3": "We make it easy for users to use our platform, that's why we provide this benefit."
+  },
   "pricing": {},
   "footer": {}
 }

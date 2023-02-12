@@ -2,12 +2,17 @@ import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import { COLORS } from "../../constants/colors";
 import globalStyles from "../../constants/globalStyles";
+import { useTranslation } from "react-i18next";
 
 const Features = ({
   type = "DEFAULT",
   order = 1,
+  title,
+  subtitle,
   imageSource = require("../../../assets/images/solution1.png"),
 }) => {
+  const { t } = useTranslation();
+
   const [screenWidth, setScreenWidth] = useState(
     Dimensions.get("screen").width
   );
@@ -27,7 +32,7 @@ const Features = ({
               fontSize: screenWidth > 1000 ? 64 : 48,
             }}
           >
-            Our Solution for your business
+            {t("features.title")}
           </Text>
           <Text
             style={{
@@ -36,8 +41,7 @@ const Features = ({
               fontSize: screenWidth > 1000 ? 20 : 16,
             }}
           >
-            We make it easy for users to use our platform, that's why we provide
-            this benefit.
+            {t("features.subtitle")}
           </Text>
         </View>
       )}
@@ -67,7 +71,7 @@ const Features = ({
               fontSize: screenWidth > 1000 ? 64 : 48,
             }}
           >
-            Our Solution for your business
+            {title}
           </Text>
           <Text
             style={{
@@ -76,8 +80,7 @@ const Features = ({
               fontSize: screenWidth > 1000 ? 20 : 16,
             }}
           >
-            We make it easy for users to use our platform, that's why we provide
-            this benefit.
+            {subtitle}
           </Text>
         </View>
         <View style={styles.rightContainer}>
