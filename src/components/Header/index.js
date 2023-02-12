@@ -12,6 +12,7 @@ import React, { useState } from "react";
 import { COLORS } from "../../constants/colors";
 import { AuthButtons, IconButton, TextButton } from "../Button";
 import NavBar from "../NavBar";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const [screenWidth, setScreenWidth] = useState(
@@ -23,6 +24,7 @@ const Header = () => {
   });
   const [menuVisible, setMenuVisible] = useState(false);
   const Menu = () => {
+    const { t } = useTranslation();
     return (
       <TouchableWithoutFeedback onPress={() => setMenuVisible(false)}>
         <Modal animationType="none" transparent={true} visible={menuVisible}>
@@ -46,23 +48,23 @@ const Header = () => {
             <View style={{ height: 50 }}></View>
             <View style={{ height: "50%", justifyContent: "space-between" }}>
               <TextButton
-                text="Product"
+                text={t("header.product")}
                 onPress={() => console.log("pressed")}
               />
               <TextButton
-                text="Solution"
+                text={t("header.solution")}
                 onPress={() => console.log("pressed")}
               />
               <TextButton
-                text="Customer"
+                text={t("header.customer")}
                 onPress={() => console.log("pressed")}
               />
               <TextButton
-                text="Pricing"
+                text={t("header.pricing")}
                 onPress={() => console.log("pressed")}
               />
               <TextButton
-                text="About us"
+                text={t("header.aboutUs")}
                 onPress={() => console.log("pressed")}
               />
             </View>

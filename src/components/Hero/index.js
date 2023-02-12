@@ -11,8 +11,11 @@ import { COLORS } from "../../constants/colors";
 import { LinearGradient } from "expo-linear-gradient";
 import globalStyles from "../../constants/globalStyles";
 import { ActionButton, HeroAction } from "../Button";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   const [email, setEmail] = useState("");
   const [screenWidth, setScreenWidth] = useState(
     Dimensions.get("screen").width
@@ -59,7 +62,7 @@ const Hero = () => {
               fontSize: screenWidth > 1000 ? 64 : 48,
             }}
           >
-            The best products start with Figma
+            {t("hero.title")}
           </Text>
           <Text
             style={{
@@ -68,8 +71,7 @@ const Hero = () => {
               fontSize: screenWidth > 1000 ? 20 : 16,
             }}
           >
-            We provide many features that you can use cheaply and easily. Try it
-            now and get an interesting promo
+            {t("hero.subtitle")}
           </Text>
           {/* Email & Action Button */}
           <View>
@@ -80,13 +82,13 @@ const Hero = () => {
                 alignSelf: screenWidth > 800 ? "baseline" : "center",
                 zIndex: 9999,
               }}
-              placeholder="Your email"
+              placeholder={t("hero.emailInput")}
               maxLength={100}
               onChangeText={(text) => setEmail(text)}
               value={email}
             />
             <HeroAction
-              title="Try for free"
+              title={t("hero.actionItem")}
               backgroundColor={COLORS.SECONDARY}
               textColor={COLORS.TEXT_SECONDARY}
               style={{

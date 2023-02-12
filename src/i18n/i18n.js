@@ -16,11 +16,12 @@ const languageDetector = {
     const deviceLanguage = getLocales()[0].languageCode;
     const languageToSet = userLanguage || deviceLanguage;
     const isLangRTL = languageToSet === "ar";
-    if (I18nManager.isRTL !== isLangRTL) {
+    //crashes when uncommented
+    /*     if (I18nManager.isRTL !== isLangRTL) {
       I18nManager.allowRTL(isLangRTL);
       I18nManager.forceRTL(isLangRTL);
       RNRestart.Restart();
-    }
+    } */
     callback(languageToSet);
   },
   cacheUserLanguage: () => {},

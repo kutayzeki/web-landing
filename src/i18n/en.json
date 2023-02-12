@@ -1,89 +1,20 @@
 {
-  "users": "Users",
-  "user_details": "User Details",
-  "more_details": "More Details",
-  "settings": "Settings",
-  "notification": "Notification",
-  "theme": "Theme",
-  "themes": "Themes",
-  "light": "Light Mode",
-  "dark": "Dark Mode",
-  "language": "Language",
-  "languages": "Languages",
-  "system_default": "System Default",
-  "en": "English",
-  "nl": "Dutch",
-  "feedback": "Feedback",
-  "briefly_describe_your_feedback": "Briefly describe your feedback",
-  "type_here": "Type here...",
-  "submit_feedback": "Submit Feedback",
-  "feedback_submitted": "Feedback Submitted",
-  "more": "More",
-  "privacy_policy": "Privacy Policy",
-  "share": "Share",
-  "rate_us": "Rate us",
-  "more_apps": "More Apps",
-  "version": "Version",
-
-  "onboarding": {
-    "continue": "continue",
-    "canChangeLater": "you can change this later in the app",
-    "getStarted": "get started",
-    "noSpam": "you'll never be spammed!",
-    "allowNotifications": "allow notifications",
-    "skip": "skip for now",
-    "viewPlans": "view all plans",
-    "tryFree": "try for free",
-    "tryFreeSubscribe": "try free & subscribe",
-    "subscribe": "subscribe",
-    "7freeTrial": "7-day free trial",
-    "pricePerYear": "then ₺459,99 per 12 months",
-    "gotIt": "got it!",
-    "letsGo": "let's go!"
+  "header": {
+    "product": "Product",
+    "solution": "Solution",
+    "customer": "Customer",
+    "pricing": "Pricing",
+    "aboutUs": "About us",
+    "login": "Login",
+    "signUp": "Sign up"
   },
-  "tabs": {
-    "home": "Home",
-    "bookmark": "Bookmarks",
-    "like": "Likes",
-    "profile": "Profile"
+  "hero": {
+    "title": "The best products start with Figma",
+    "subtitle": "We provide many features that you can use cheaply and easily. Try it now and get an interesting promo",
+    "emailInput": "Your email",
+    "actionItem": "Try for free"
   },
-  "profile": {
-    "premium": {
-      "unlockFeatures": "Unlock All Features",
-      "appPro": "Application Pro"
-    },
-    "sectionHeader": {
-      "account": "ACCOUNT",
-      "settings": "SETTINGS",
-      "support": "SUPPORT",
-      "followUs": "FOLLOW US"
-    },
-    "sectionItems": {
-      "createProfile": "Create Profile",
-      "inviteFriends": "Invite Friends",
-      "notifications": "Notifications",
-      "themes": "Themes",
-      "languages": "Languages",
-      "appearance": "Appearance",
-      "widget": "Widget",
-      "help": "Help",
-      "feedback": "Feedback",
-      "leaveReview": "Leave a review",
-      "twitter": "Twitter",
-      "instagram": "Instagram",
-      "facebook": "Facebook",
-      "linkedin": "Linkedin",
-      "analytics": "Analytics",
-      "credits": "Credits",
-      "imprint": "Imprint",
-      "termsOfService": "Terms of Service"
-    }
-  },
-  "review": {
-    "leaveReview": "Leave a review",
-    "submitted": "Review Already Submitted",
-    "submittedBody": "If you want you can change it on App Store.",
-    "goToAppStore": "Go to App Store",
-    "ok": "Ok"
-  }
+  "features": {},
+  "pricing": {},
+  "footer": {}
 }

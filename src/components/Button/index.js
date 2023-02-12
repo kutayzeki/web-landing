@@ -10,6 +10,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 import { styles } from "./styles";
 import globalStyles from "../../constants/globalStyles";
 import { COLORS } from "../../constants/colors";
+import { useTranslation } from "react-i18next";
 
 export const IconButton = ({
   icon = "person",
@@ -46,13 +47,18 @@ export const EmojiButton = ({ source, count, onPress, pressed }) => (
   </Pressable>
 );
 export const AuthButtons = () => {
+  const { t } = useTranslation();
+
   return (
     <View style={{ flexDirection: "row", alignSelf: "center" }}>
       <ActionButtonInverse
-        title="Login"
+        title={t("header.login")}
         onPress={() => console.log("pressed")}
       />
-      <ActionButton title="Sign up" onPress={() => console.log("pressed")} />
+      <ActionButton
+        title={t("header.signUp")}
+        onPress={() => console.log("pressed")}
+      />
     </View>
   );
 };
