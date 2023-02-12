@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { View, Text, StyleSheet, Dimensions, Image } from "react-native";
 import { COLORS } from "../../constants/colors";
 import globalStyles from "../../constants/globalStyles";
 import { IconButton, TextButton } from "../Button";
 export const Footer = () => {
+  const { t } = useTranslation();
+
   const [screenWidth, setScreenWidth] = useState(
     Dimensions.get("screen").width
   );
@@ -33,7 +36,7 @@ export const Footer = () => {
           style={styles.image}
           source={require("../../../assets/logo.png")}
         />
-        <Text style={globalStyles.text20Style}>Copyright 2023</Text>
+        <Text style={globalStyles.text20Style}>{t("footer.copyright")}</Text>
       </View>
       <View
         style={{
@@ -52,10 +55,10 @@ export const Footer = () => {
               { fontWeight: "bold", marginBottom: 8 },
             ]}
           >
-            Company
+            {t("footer.company")}
           </Text>
           <TextButton
-            text={"About Us"}
+            text={t("footer.aboutUs")}
             textStyle={{
               marginBottom: 8,
               textAlign: "left",
@@ -64,7 +67,7 @@ export const Footer = () => {
             onPress={() => console.log("pressed")}
           />
           <TextButton
-            text={"Product"}
+            text={t("footer.product")}
             textStyle={{
               marginBottom: 8,
               textAlign: "left",
@@ -73,7 +76,7 @@ export const Footer = () => {
             onPress={() => console.log("pressed")}
           />
           <TextButton
-            text={"Testimonial"}
+            text={t("footer.testimonial")}
             textStyle={{
               marginBottom: 8,
               textAlign: "left",
@@ -89,10 +92,10 @@ export const Footer = () => {
               { fontWeight: "bold", marginBottom: 8 },
             ]}
           >
-            Support
+            {t("footer.support")}
           </Text>
           <TextButton
-            text={"FAQ"}
+            text={t("footer.faq")}
             textStyle={{
               marginBottom: 8,
               textAlign: "left",
@@ -101,7 +104,7 @@ export const Footer = () => {
             onPress={() => console.log("pressed")}
           />
           <TextButton
-            text={"Privacy Policy"}
+            text={t("footer.policy")}
             textStyle={{
               marginBottom: 8,
               textAlign: "left",
@@ -110,7 +113,7 @@ export const Footer = () => {
             onPress={() => console.log("pressed")}
           />
           <TextButton
-            text={"Terms of Services"}
+            text={t("footer.terms")}
             textStyle={{
               marginBottom: 8,
               textAlign: "left",
@@ -126,10 +129,10 @@ export const Footer = () => {
               { fontWeight: "bold", marginBottom: 8 },
             ]}
           >
-            Our Works
+            {t("footer.ourWorks")}
           </Text>
           <TextButton
-            text={"Pricing"}
+            text={t("footer.pricing")}
             textStyle={{
               marginBottom: 8,
               textAlign: "left",
@@ -138,7 +141,7 @@ export const Footer = () => {
             onPress={() => console.log("pressed")}
           />
           <TextButton
-            text={"Customer"}
+            text={t("footer.customer")}
             textStyle={{
               marginBottom: 8,
               textAlign: "left",
@@ -147,7 +150,7 @@ export const Footer = () => {
             onPress={() => console.log("pressed")}
           />
           <TextButton
-            text={"Product"}
+            text={t("footer.product")}
             textStyle={{
               marginBottom: 8,
               textAlign: "left",

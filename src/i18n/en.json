@@ -46,5 +46,18 @@
     "benefit6": "Sync accross devices",
     "benefit7": "Share with 5 users"
   },
-  "footer": {}
+  "footer": {
+    "copyright": "Copyright 2023",
+    "company": "Company",
+    "aboutUs": "About Us",
+    "product": "Product",
+    "testimonial": "Testimonial",
+    "support": "Support",
+    "faq": "FAQ",
+    "policy": "Privacy Policy",
+    "terms": "Terms of Services",
+    "ourWorks": "Our Works",
+    "pricing": "Pricing",
+    "customer": "Customer"
+  }
 }
