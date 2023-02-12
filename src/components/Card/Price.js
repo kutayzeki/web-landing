@@ -10,8 +10,11 @@ import React, { useState } from "react";
 import { COLORS } from "../../constants/colors";
 import { HeroAction } from "../Button";
 import Icon from "react-native-vector-icons/Ionicons";
+import { useTranslation } from "react-i18next";
 
 export const StandartPrice = ({ type, price, per }) => {
+  const { t } = useTranslation();
+
   const [screenWidth, setScreenWidth] = useState(
     Dimensions.get("screen").width
   );
@@ -41,7 +44,7 @@ export const StandartPrice = ({ type, price, per }) => {
           color: COLORS.TEXT_SECONDARY,
         }}
       >
-        Standart
+        {t("pricing.standart")}
       </Text>
       {/* Subtitle */}
       <Text
@@ -52,7 +55,7 @@ export const StandartPrice = ({ type, price, per }) => {
           color: COLORS.TEXT_SECONDARY,
         }}
       >
-        The national average cost of buying coin easy.
+        {t("pricing.standartSubtext")}
       </Text>
       {/* Price */}
       <View
@@ -79,11 +82,11 @@ export const StandartPrice = ({ type, price, per }) => {
             color: COLORS.TEXT_SECONDARY,
           }}
         >
-          {` $ ${per}`}
+          {` $ /${per === "/month" ? t("pricing.month") : t("pricing.year")}`}
         </Text>
       </View>
       <HeroAction
-        title="Select Plan"
+        title={t("pricing.selectPlan")}
         onPress={() => console.log("Plan selected")}
         style={{
           backgroundColor: type === "DEFAULT" ? COLORS.SECONDARY : COLORS.WHITE,
@@ -97,17 +100,19 @@ export const StandartPrice = ({ type, price, per }) => {
           type === "DEFAULT" ? COLORS.TEXT_PRIMARY : COLORS.TEXT_SECONDARY
         }
       />
-      <Benefits type={"DEFAULT"} text={"5 collections"} />
-      <Benefits type={"DEFAULT"} text={"Worldwide accessibility "} />
-      <Benefits type={"DEFAULT"} text={"25 automation actions"} />
-      <Benefits type={"DEFAULT"} text={"Access all features"} />
-      <Benefits type={"DEFAULT"} text={"24 hours support"} />
-      <Benefits type={"NOTINCLUDED"} text={"Sync accross devices"} />
-      <Benefits type={"NOTINCLUDED"} text={"Share with more 5 users"} />
+      <Benefits type={"DEFAULT"} text={t("pricing.benefit1")} />
+      <Benefits type={"DEFAULT"} text={t("pricing.benefit2")} />
+      <Benefits type={"DEFAULT"} text={t("pricing.benefit3")} />
+      <Benefits type={"NOTINCLUDED"} text={t("pricing.benefit4")} />
+      <Benefits type={"NOTINCLUDED"} text={t("pricing.benefit5")} />
+      <Benefits type={"NOTINCLUDED"} text={t("pricing.benefit6")} />
+      <Benefits type={"NOTINCLUDED"} text={t("pricing.benefit7")} />
     </View>
   );
 };
 export const ExtendedPrice = ({ type, price, per }) => {
+  const { t } = useTranslation();
+
   const [screenWidth, setScreenWidth] = useState(
     Dimensions.get("screen").width
   );
@@ -137,7 +142,7 @@ export const ExtendedPrice = ({ type, price, per }) => {
           color: COLORS.TEXT_SECONDARY,
         }}
       >
-        Extended
+        {t("pricing.extended")}
       </Text>
       {/* discount */}
       {per === "/year" && (
@@ -176,7 +181,7 @@ export const ExtendedPrice = ({ type, price, per }) => {
           color: COLORS.TEXT_SECONDARY,
         }}
       >
-        The national average cost of buying coin easy.
+        {t("pricing.extendedSubtext")}
       </Text>
       {/* Price */}
       <View
@@ -203,11 +208,11 @@ export const ExtendedPrice = ({ type, price, per }) => {
             color: COLORS.TEXT_SECONDARY,
           }}
         >
-          {` $ ${per}`}
+          {` $ /${per === "/month" ? t("pricing.month") : t("pricing.year")}`}
         </Text>
       </View>
       <HeroAction
-        title="Select Plan"
+        title={t("pricing.selectPlan")}
         onPress={() => console.log("Plan selected")}
         style={{
           backgroundColor: type === "DEFAULT" ? COLORS.SECONDARY : COLORS.WHITE,
@@ -221,17 +226,19 @@ export const ExtendedPrice = ({ type, price, per }) => {
           type === "DEFAULT" ? COLORS.TEXT_PRIMARY : COLORS.TEXT_SECONDARY
         }
       />
-      <Benefits type={"DEFAULT"} text={"5 collections"} />
-      <Benefits type={"DEFAULT"} text={"Worldwide accessibility "} />
-      <Benefits type={"DEFAULT"} text={"25 automation actions"} />
-      <Benefits type={"DEFAULT"} text={"Access all features"} />
-      <Benefits type={"DEFAULT"} text={"24 hours support"} />
-      <Benefits type={"NOTINCLUDED"} text={"Sync accross devices"} />
-      <Benefits type={"NOTINCLUDED"} text={"Share with more 5 users"} />
+      <Benefits type={"DEFAULT"} text={t("pricing.benefit1")} />
+      <Benefits type={"DEFAULT"} text={t("pricing.benefit2")} />
+      <Benefits type={"DEFAULT"} text={t("pricing.benefit3")} />
+      <Benefits type={"DEFAULT"} text={t("pricing.benefit4")} />
+      <Benefits type={"DEFAULT"} text={t("pricing.benefit5")} />
+      <Benefits type={"NOTINCLUDED"} text={t("pricing.benefit6")} />
+      <Benefits type={"NOTINCLUDED"} text={t("pricing.benefit7")} />
     </View>
   );
 };
 export const PremiumPrice = ({ type, price, per }) => {
+  const { t } = useTranslation();
+
   const [screenWidth, setScreenWidth] = useState(
     Dimensions.get("screen").width
   );
@@ -261,7 +268,7 @@ export const PremiumPrice = ({ type, price, per }) => {
           color: COLORS.TEXT_SECONDARY,
         }}
       >
-        Premium
+        {t("pricing.premium")}
       </Text>
       {/* Subtitle */}
       <Text
@@ -272,7 +279,7 @@ export const PremiumPrice = ({ type, price, per }) => {
           color: COLORS.TEXT_SECONDARY,
         }}
       >
-        The national average cost of buying coin easy.
+        {t("pricing.premiumSubtext")}
       </Text>
       {/* Price */}
       <View
@@ -299,11 +306,11 @@ export const PremiumPrice = ({ type, price, per }) => {
             color: COLORS.TEXT_SECONDARY,
           }}
         >
-          {` $ ${per}`}
+          {` $ /${per === "/month" ? t("pricing.month") : t("pricing.year")}`}
         </Text>
       </View>
       <HeroAction
-        title="Select Plan"
+        title={t("pricing.selectPlan")}
         onPress={() => console.log("Plan selected")}
         style={{
           backgroundColor: type === "DEFAULT" ? COLORS.SECONDARY : COLORS.WHITE,
@@ -317,13 +324,13 @@ export const PremiumPrice = ({ type, price, per }) => {
           type === "DEFAULT" ? COLORS.TEXT_PRIMARY : COLORS.TEXT_SECONDARY
         }
       />
-      <Benefits type={"DEFAULT"} text={"5 collections"} />
-      <Benefits type={"DEFAULT"} text={"Worldwide accessibility "} />
-      <Benefits type={"DEFAULT"} text={"25 automation actions"} />
-      <Benefits type={"DEFAULT"} text={"Access all features"} />
-      <Benefits type={"DEFAULT"} text={"24 hours support"} />
-      <Benefits type={"NOTINCLUDED"} text={"Sync accross devices"} />
-      <Benefits type={"NOTINCLUDED"} text={"Share with more 5 users"} />
+      <Benefits type={"DEFAULT"} text={t("pricing.benefit1")} />
+      <Benefits type={"DEFAULT"} text={t("pricing.benefit2")} />
+      <Benefits type={"DEFAULT"} text={t("pricing.benefit3")} />
+      <Benefits type={"DEFAULT"} text={t("pricing.benefit4")} />
+      <Benefits type={"DEFAULT"} text={t("pricing.benefit5")} />
+      <Benefits type={"DEFAULT"} text={t("pricing.benefit6")} />
+      <Benefits type={"DEFAULT"} text={t("pricing.benefit7")} />
     </View>
   );
 };

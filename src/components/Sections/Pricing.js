@@ -12,8 +12,11 @@ import globalStyles from "../../constants/globalStyles";
 import { HeroAction } from "../Button";
 import Icon from "react-native-vector-icons/Ionicons";
 import { ExtendedPrice, PremiumPrice, StandartPrice } from "../Card/Price";
+import { useTranslation } from "react-i18next";
 
 const Pricing = () => {
+  const { t } = useTranslation();
+
   const [period, setPeriod] = useState("year");
 
   const [screenWidth, setScreenWidth] = useState(
@@ -35,7 +38,7 @@ const Pricing = () => {
             fontSize: screenWidth > 1000 ? 64 : 48,
           }}
         >
-          Our pricing
+          {t("pricing.title")}
         </Text>
         {/* Subtitle */}
         <Text
@@ -45,8 +48,7 @@ const Pricing = () => {
             fontSize: screenWidth > 1000 ? 20 : 16,
           }}
         >
-          Pay securely online and manage the booking via desktop or via the
-          mobile app.
+          {t("pricing.subtitle")}
         </Text>
       </View>
       {/* Pricing switch */}
@@ -67,7 +69,7 @@ const Pricing = () => {
             fontWeight: period === "month" && "bold",
           }}
         >
-          Monthly
+          {t("pricing.monthly")}
         </Text>
         <Switch
           style={{
@@ -85,7 +87,7 @@ const Pricing = () => {
             fontWeight: period === "year" && "bold",
           }}
         >
-          Annually
+          {t("pricing.annually")}
         </Text>
       </View>
       {/* Cards */}

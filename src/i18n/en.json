@@ -24,6 +24,27 @@
     "featureSubtitle2": "We make it easy for users to use our platform, that's why we provide this benefit.",
     "featureSubtitle3": "We make it easy for users to use our platform, that's why we provide this benefit."
   },
-  "pricing": {},
+  "pricing": {
+    "title": "Our pricing",
+    "subtitle": "Pay securely online and manage the booking via desktop or via the mobile app.",
+    "monthly": "Monthly",
+    "annually": "Annually",
+    "month": "month",
+    "year": "year",
+    "standart": "Standart",
+    "extended": "Extended",
+    "premium": "Premium",
+    "standartSubtext": "The national average cost of buying coin easy.",
+    "extendedSubtext": "The national average cost of buying coin easy.",
+    "premiumSubtext": "The national average cost of buying coin easy.",
+    "selectPlan": "Select Plan",
+    "benefit1": "5 collections",
+    "benefit2": "Worldwide accessibility",
+    "benefit3": "25 automation actions",
+    "benefit4": "Access all features",
+    "benefit5": "24 hours support",
+    "benefit6": "Sync accross devices",
+    "benefit7": "Share with 5 users"
+  },
   "footer": {}
 }
