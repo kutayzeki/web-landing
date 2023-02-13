@@ -139,6 +139,9 @@ const PriceSection = ({ period }) => {
   const standartPrice = 10;
   const extendedPrice = 15;
   const premiumPrice = 20;
+
+  const [selectedPlan, setSelectedPlan] = useState(1);
+
   const [screenWidth, setScreenWidth] = useState(
     Dimensions.get("screen").width
   );
@@ -157,18 +160,22 @@ const PriceSection = ({ period }) => {
       }}
     >
       <StandartPrice
-        type={"DEFAULT"}
+        type={selectedPlan === 0 ? "SELECTED" : "DEFAULT"}
         price={period === "year" ? standartPrice * 8 : standartPrice}
         per={`/${period}`}
+        setSelectedPlan={setSelectedPlan}
       />
       <ExtendedPrice
+        type={selectedPlan === 1 ? "SELECTED" : "DEFAULT"}
         price={period === "year" ? extendedPrice * 8 : extendedPrice}
         per={`/${period}`}
+        setSelectedPlan={setSelectedPlan}
       />
       <PremiumPrice
-        type={"DEFAULT"}
+        type={selectedPlan === 2 ? "SELECTED" : "DEFAULT"}
         price={period === "year" ? premiumPrice * 8 : premiumPrice}
         per={`/${period}`}
+        setSelectedPlan={setSelectedPlan}
       />
     </View>
   );

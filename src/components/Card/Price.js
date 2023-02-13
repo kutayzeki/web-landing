@@ -12,7 +12,7 @@ import { HeroAction } from "../Button";
 import Icon from "react-native-vector-icons/Ionicons";
 import { useTranslation } from "react-i18next";
 
-export const StandartPrice = ({ type, price, per }) => {
+export const StandartPrice = ({ type, price, per, setSelectedPlan }) => {
   const { t } = useTranslation();
 
   const [screenWidth, setScreenWidth] = useState(
@@ -87,7 +87,8 @@ export const StandartPrice = ({ type, price, per }) => {
       </View>
       <HeroAction
         title={t("pricing.selectPlan")}
-        onPress={() => console.log("Plan selected")}
+        onPress={() => setSelectedPlan(0)}
+        disabled={type === "SELECTED"}
         style={{
           backgroundColor: type === "DEFAULT" ? COLORS.SECONDARY : COLORS.WHITE,
           borderRadius: 8,
@@ -110,7 +111,7 @@ export const StandartPrice = ({ type, price, per }) => {
     </View>
   );
 };
-export const ExtendedPrice = ({ type, price, per }) => {
+export const ExtendedPrice = ({ type, price, per, setSelectedPlan }) => {
   const { t } = useTranslation();
 
   const [screenWidth, setScreenWidth] = useState(
@@ -213,7 +214,8 @@ export const ExtendedPrice = ({ type, price, per }) => {
       </View>
       <HeroAction
         title={t("pricing.selectPlan")}
-        onPress={() => console.log("Plan selected")}
+        onPress={() => setSelectedPlan(1)}
+        disabled={type === "SELECTED"}
         style={{
           backgroundColor: type === "DEFAULT" ? COLORS.SECONDARY : COLORS.WHITE,
           borderRadius: 8,
@@ -236,7 +238,7 @@ export const ExtendedPrice = ({ type, price, per }) => {
     </View>
   );
 };
-export const PremiumPrice = ({ type, price, per }) => {
+export const PremiumPrice = ({ type, price, per, setSelectedPlan }) => {
   const { t } = useTranslation();
 
   const [screenWidth, setScreenWidth] = useState(
@@ -311,7 +313,8 @@ export const PremiumPrice = ({ type, price, per }) => {
       </View>
       <HeroAction
         title={t("pricing.selectPlan")}
-        onPress={() => console.log("Plan selected")}
+        onPress={() => setSelectedPlan(2)}
+        disabled={type === "SELECTED"}
         style={{
           backgroundColor: type === "DEFAULT" ? COLORS.SECONDARY : COLORS.WHITE,
           borderRadius: 8,

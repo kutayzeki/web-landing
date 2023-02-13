@@ -67,6 +67,7 @@ export const HeroAction = ({
   title = "..",
   onPress,
   style,
+  disabled = false,
 }) => {
   return (
     <TouchableOpacity
@@ -74,6 +75,7 @@ export const HeroAction = ({
       onPress={async () => {
         onPress();
       }}
+      disabled={disabled}
     >
       <Text style={{ ...globalStyles.actionButtonText, color: textColor }}>
         {title}
